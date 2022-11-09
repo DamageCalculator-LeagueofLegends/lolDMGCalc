@@ -9,13 +9,22 @@ import SwiftUI
 
 struct ChooseChampion: View {
     @ObservedObject var vm: ViewModel
+    @State var text: String = ""
     var body: some View {
-        Text(vm.$name)
+        List{
+            ForEach(vm.champion_list) { champion in
+                Text(champion.name)
+            }
+        }
+        .searchable(text: .constant(""))
+        
     }
 }
 
 struct ChooseChampion_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseChampion(vm: ViewModel())
+        NavigationStack{
+            ChooseChampion(vm: ViewModel())
+        }
     }
 }

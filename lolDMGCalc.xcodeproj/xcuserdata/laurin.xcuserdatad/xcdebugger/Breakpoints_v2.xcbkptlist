@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6A4445D6-1778-40A9-AC31-BD65A5F29E6F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA14F45C-5669-400B-9BB1-537D9E326362"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "get(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD59874A-F6B5-4E2A-B9D2-8391A2DFF059"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "performRequest(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "638A4090-77B6-420A-88F7-752C5DBD4DB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "performRequest(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85F23BD7-ACDB-47AB-A82A-7E8FBFB8F448"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "performRequest(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12329975-176C-41EF-9369-0166CB6908D5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "performRequest(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "12329975-176C-41EF-9369-0166CB6908D5 - 4b1166c6b4155a50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for lolDMGCalc.APIClient.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1716">
+               </Location>
+               <Location
+                  uuid = "12329975-176C-41EF-9369-0166CB6908D5 - 7e50179e0131b853"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for lolDMGCalc.APIClient.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(Foundation.URLRequest) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

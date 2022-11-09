@@ -8,8 +8,9 @@
 import Foundation
 
 
-struct Champion: Identifiable{
+struct Champion: Identifiable {
     var id: UUID = UUID()
     var name: String
     var logo: String
+    var level: Int
 }
