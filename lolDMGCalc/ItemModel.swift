@@ -8,8 +8,8 @@
 import Foundation
 
 struct Item: Identifiable {
-    var id: UUID = UUID()
-    
+    var id: UUID = .init()
+
     var item_id: Int
     var item_name: String
     var item_icon: String
@@ -18,8 +18,8 @@ struct Item: Identifiable {
     var is_legendary: Bool
     var is_mythic: Bool
 
-    var item_builds_from: Array<Any>
-    var item_builds_into: Array<Any>
+    var item_builds_from: [Any]
+    var item_builds_into: [Any]
 
     var item_no_effects: Bool
 

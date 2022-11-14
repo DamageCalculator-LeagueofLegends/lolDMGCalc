@@ -11,7 +11,7 @@ import SwiftUI
 struct lolDMGCalcApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
+            NavigationStack {
                 ContentView()
             }
         }

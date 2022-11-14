@@ -7,10 +7,9 @@
 
 import Foundation
 
-
 struct Champion: Identifiable, Codable {
-    var id: UUID = UUID()
-    
+    var id: UUID = .init()
+
     var champion_id: Int
     var champion_name: String
     var champion_icon: String
@@ -28,7 +27,7 @@ struct Champion: Identifiable, Codable {
     var base_armor: Double
     var base_magic_resistance: Double
     var base_attack_damage: Double
-     
+
     var base_attack_speed: Double
     var base_movespeed: Double
 
@@ -41,7 +40,6 @@ struct Champion: Identifiable, Codable {
     var attack_damage_per_level: Double
     var attack_speed_per_level: Double
 
-     
     var critical_strike_damage: Double
     var critical_strike_damage_modifier: Double
     var attack_speed_ratio: Double
@@ -84,7 +82,6 @@ struct Champion: Identifiable, Codable {
     var total_life_steal: Double
     var total_physical_vamp: Double
     var total_omnivamp: Double
-
 
     var has_mythic: Bool
     var number_of_legendary_items: Int

@@ -19,6 +19,7 @@
 		496779BA290D5D2300D25FA4 /* ChooseChampion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779B9290D5D2300D25FA4 /* ChooseChampion.swift */; };
 		496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779BB290D5D9400D25FA4 /* ChampionModel.swift */; };
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
+		49EE187F29229FF700B804F8 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE187E29229FF700B804F8 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		496779B9290D5D2300D25FA4 /* ChooseChampion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseChampion.swift; sourceTree = "<group>"; };
 		496779BB290D5D9400D25FA4 /* ChampionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionModel.swift; sourceTree = "<group>"; };
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		49EE187E29229FF700B804F8 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			children = (
 				490DB5D728FD53DA004A429F /* lolDMGCalcApp.swift */,
 				490DB5D928FD53DA004A429F /* ContentView.swift */,
+				49EE187E29229FF700B804F8 /* ImageService.swift */,
 				4943B429291C28760034E52A /* APIClient.swift */,
 				49476BE329127B5600457FEE /* Help.swift */,
 				49476BDD2911C1B300457FEE /* ChooseItem.swift */,
@@ -169,6 +172,7 @@
 				490DB5DA28FD53DA004A429F /* ContentView.swift in Sources */,
 				49476BE02911CA1D00457FEE /* Mock.swift in Sources */,
 				49476BDE2911C1B300457FEE /* ChooseItem.swift in Sources */,
+				49EE187F29229FF700B804F8 /* ImageService.swift in Sources */,
 				496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */,
 				490DB5D828FD53DA004A429F /* lolDMGCalcApp.swift in Sources */,
 			);
@@ -299,6 +303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lolDMGCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = UDND6CWA46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -327,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"lolDMGCalc/Preview Content\"";
+				DEVELOPMENT_TEAM = UDND6CWA46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
