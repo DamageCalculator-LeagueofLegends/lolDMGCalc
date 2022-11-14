@@ -13,7 +13,7 @@ struct ChooseChampion: View {
     var body: some View {
         List{
             ForEach(vm.champion_list) { champion in
-                Text(champion.name)
+                Text(champion.champion_name)
             }
         }
         .searchable(text: .constant(""))

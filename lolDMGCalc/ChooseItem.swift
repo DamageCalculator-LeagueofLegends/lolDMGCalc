@@ -12,7 +12,7 @@ struct ChooseItem: View {
     var body: some View {
         List {
             ForEach(vm.item_list) { item in
-                Text(item.name)
+                Text(item.item_name)
             }
         }
     }

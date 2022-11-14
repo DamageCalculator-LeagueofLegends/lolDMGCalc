@@ -38,4 +38,5 @@ class ViewModel: ObservableObject {
 
 struct TestModel: Codable {
     let names: [String]
+    
 }

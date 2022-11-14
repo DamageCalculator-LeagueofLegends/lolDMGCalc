@@ -5,18 +5,18 @@
 //  Created by Laurin Notemann on 17.10.22.
 //
 
-import SwiftUI
+import SwiftUI  
 
 struct ContentView: View {
     
     @StateObject var vm: ViewModel = ViewModel()
-    
+    var test: Image = Image(systemName: "icon")
     private let flexibleColoumns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-
+    
     @State private var championLevel: Double = 1
     
     @State var qLevel: Int = 0
@@ -27,13 +27,21 @@ struct ContentView: View {
             NavigationLink {
                 ChooseChampion(vm: vm)
             } label: {
-                Text("      ")
-                    .foregroundColor(.white)
-                    .padding(4)
-                    .background(.blue)
-                    .cornerRadius(8)
+                //Text("      ")
+                AsyncImage(
+                    url: URL(string: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6653_mage_t4_liandrysanguish.png"),
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 32, maxHeight: 32)
+                            .cornerRadius(8)
+                    },
+                    placeholder:{
+                        ProgressView()
+                    } )
             }
             
+            AsyncImage(url: URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/champion/Aatrox.png"))
             Text("Choose Items:")
             LazyVGrid(columns: flexibleColoumns) {
                 ForEach(1..<7) { i in
@@ -41,6 +49,7 @@ struct ContentView: View {
                         ChooseItem(vm: vm)
                     } label: {
                         Text("Item \(i)")
+                            .frame(minWidth: 64, minHeight: 64)
                             .foregroundColor(.white)
                             .padding(7)
                             .background(.blue)
@@ -49,22 +58,63 @@ struct ContentView: View {
                 }
             }
             List {
-                Slider(value: $championLevel, in: 1...18, step: 1) {
-                    Text("Level")
-                }
-                
-                Text("\(Int(championLevel))")
-                
-                Picker(selection: $qLevel) {
-                    ForEach(0..<6) { i in
-                        Text("\(i)").tag(i)
+                Text("Champion Level:")
+                HStack{
+                    Slider(value: $championLevel, in: 1...18, step: 1) {
+                        Text("Level")
                     }
-                } label: {
-                    Text("Qlevel")
+                    
+                    Text("\(Int(championLevel))")
                 }
-                .pickerStyle(.segmented)
-                
-                Text("\(qLevel)")
+                HStack{
+                    Text("Q Level:")
+                        .frame(minWidth: 65)
+                    Picker(selection: $qLevel) {
+                        ForEach(0..<6) { i in
+                            Text("\(i)").tag(i)
+                        }
+                    } label: {
+                        Text("Qlevel")
+                    }
+                    .pickerStyle(.segmented)
+                }
+                HStack{
+                    Text("W Level:")
+                        .frame(minWidth: 65)
+                    Picker(selection: $qLevel) {
+                        ForEach(0..<6) { i in
+                            Text("\(i)").tag(i)
+                        }
+                    } label: {
+                        Text("Qlevel")
+                    }
+                    .pickerStyle(.segmented)
+                }
+                HStack{
+                    Text("E Level:")
+                        .frame(minWidth: 65)
+                    Picker(selection: $qLevel) {
+                        ForEach(0..<6) { i in
+                            Text("\(i)").tag(i)
+                        }
+                    } label: {
+                        Text("Qlevel")
+                    }
+                    .pickerStyle(.segmented)
+                }
+                HStack{
+                    Text("R Level:")
+                        .frame(minWidth: 65)
+                    Picker(selection: $qLevel) {
+                        ForEach(0..<6) { i in
+                            Text("\(i)").tag(i)
+                        }
+                    } label: {
+                        Text("Qlevel")
+                    }
+                    .pickerStyle(.segmented)
+                }
+                //Text("\(qLevel)")
                 Button {
                     vm.testApi()
                 } label: {
