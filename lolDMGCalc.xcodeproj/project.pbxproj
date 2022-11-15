@@ -26,6 +26,7 @@
 		496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779BB290D5D9400D25FA4 /* ChampionModel.swift */; };
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
 		49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */; };
+		49C30FB929240C2000414366 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB829240C2000414366 /* ChampionService.swift */; };
 		49EE187F29229FF700B804F8 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE187E29229FF700B804F8 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		496779BB290D5D9400D25FA4 /* ChampionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionModel.swift; sourceTree = "<group>"; };
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsOverview.swift; sourceTree = "<group>"; };
+		49C30FB829240C2000414366 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
 		49EE187E29229FF700B804F8 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				490DB5D928FD53DA004A429F /* ContentView.swift */,
 				4943B429291C28760034E52A /* APIClient.swift */,
 				49BD46ED290D63BC00192A0C /* ViewModel.swift */,
+				49C30FB829240C2000414366 /* ChampionService.swift */,
 				49550DAE2922E25500F13E9F /* AbilityLevel.swift */,
 				495E54802922D68800C36022 /* Others */,
 				495E547F2922D67300C36022 /* Models */,
@@ -227,6 +230,7 @@
 			files = (
 				49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */,
 				496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */,
+				49C30FB929240C2000414366 /* ChampionService.swift in Sources */,
 				49476BE429127B5600457FEE /* Help.swift in Sources */,
 				4943B42A291C28760034E52A /* APIClient.swift in Sources */,
 				49476BE22911CBAC00457FEE /* ItemModel.swift in Sources */,

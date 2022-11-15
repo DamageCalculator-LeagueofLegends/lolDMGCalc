@@ -100,5 +100,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E437F296-E8B2-4B54-957B-C0E84E80C534"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "lolDMGCalc/ChampionService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getChampions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E437F296-E8B2-4B54-957B-C0E84E80C534 - 3b8ac72d50cafe08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for lolDMGCalc.ChampionService.getChampions() async throws -&gt; Swift.Array&lt;lolDMGCalc.ChampionModel&gt;"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/ChampionService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "E437F296-E8B2-4B54-957B-C0E84E80C534 - 987f325edba5b5d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for lolDMGCalc.ChampionService.getChampions() async throws -&gt; Swift.Array&lt;lolDMGCalc.ChampionModel&gt;"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/ChampionService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "E437F296-E8B2-4B54-957B-C0E84E80C534 - 44d1d55dcd56430e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for lolDMGCalc.ChampionService.getChampions() async throws -&gt; Swift.Array&lt;lolDMGCalc.ChampionModel&gt;"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/ChampionService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "E437F296-E8B2-4B54-957B-C0E84E80C534 - ae742a65f493e28f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for lolDMGCalc.ChampionService.getChampions() async throws -&gt; Swift.Array&lt;lolDMGCalc.ChampionModel&gt;"
+                  moduleName = "lolDMGCalc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laurin/Documents/Swift/lolDMGCalc/lolDMGCalc/ChampionService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

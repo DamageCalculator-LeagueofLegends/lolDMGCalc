@@ -8,6 +8,14 @@
 import Foundation
 
 class Mock {
+    
+    // MARK: VMs ----------------------------------
+    
+    static var vm: ViewModel {
+        return ViewModel(championService: ChampionServiceMock())
+    }
+    
+    
     // MARK: Champions -------------------------------
 
     static var champions: [ChampionModel] {

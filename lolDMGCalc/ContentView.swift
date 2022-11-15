@@ -16,14 +16,11 @@ struct ContentView: View {
             ChooseItemButtonsView(vm: vm)
             ChampionConfigView(vm: vm)
         }
-        .task {
-            await vm.testApi()
-        }
         .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
             Button("reload") {
                 vm.showingError = false
                 Task {
-                    await vm.testApi()
+                    await vm.fetchChampions()
                 }
             }
         }

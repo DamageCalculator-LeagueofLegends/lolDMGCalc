@@ -13,13 +13,32 @@ struct ChampionListView: View {
 
     var body: some View {
         List {
-            ForEach(vm.championList.listOfChampions) { champion in
+            ForEach(vm.championList) { champion in
                 NavigationLink {
                     ChampionStatsOverview(vm: vm, champ: champion)
                 } label: {
-                    Text("\(champion.champion_name)")
+                    HStack {
+                        AsyncImage(
+                            url: URL(string: champion.champion_icon),
+                            content: { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .scaledToFit()
+                                    .frame(maxWidth: 40, maxHeight: 40)
+                            },
+                            placeholder: {
+                                ProgressView()
+                            }
+                        )
+
+                        Text("\(champion.champion_name)")
+                    }
                 }
             }
+        }
+        .task {
+            await vm.fetchChampions()
         }
         .navigationTitle("Champions")
         .searchable(text: .constant(""), placement: .navigationBarDrawer(displayMode: .always))
@@ -29,7 +48,7 @@ struct ChampionListView: View {
 struct ChampionListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChampionListView(vm: ViewModel())
+            ChampionListView(vm: Mock.vm)
 //                .environmentObject(ViewModel())
         }
     }
