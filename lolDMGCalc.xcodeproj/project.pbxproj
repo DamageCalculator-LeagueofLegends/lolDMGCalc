@@ -108,6 +108,7 @@
 		49550DA72922DB5B00F13E9F /* ChampionConfig */ = {
 			isa = PBXGroup;
 			children = (
+				495E54812922D70B00C36022 /* ChooseChampionButtonView.swift */,
 				49550DA82922DBE500F13E9F /* ChampionConfigView.swift */,
 				49550DAA2922DE5D00F13E9F /* ChampionLevelSliderView.swift */,
 				49550DAC2922DF1D00F13E9F /* AbilityLevelView.swift */,
@@ -149,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				496779B9290D5D2300D25FA4 /* ChampionListView.swift */,
-				495E54812922D70B00C36022 /* ChooseChampionButtonView.swift */,
 				49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */,
 			);
 			path = ChooseChampion;

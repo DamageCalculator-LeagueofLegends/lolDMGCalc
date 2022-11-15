@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChooseChampionButtonView: View {
     @ObservedObject var vm: ViewModel
+    
     var body: some View {
         NavigationLink {
             ChampionListView(vm: vm)
@@ -23,13 +24,14 @@ struct ChooseChampionButtonView: View {
                             .aspectRatio(contentMode: .fit)
                             .scaledToFit()
                             .frame(maxWidth: 90, maxHeight: 90)
-                        //                            .cornerRadius(8)
+//                            .cornerRadius(8)
                     },
                     placeholder: {
                         ProgressView()
                     }
                 )
             }
+//            .navigationTitle("Dmg Calc")
         }
     }
 }

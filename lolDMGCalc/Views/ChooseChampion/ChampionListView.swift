@@ -13,15 +13,16 @@ struct ChampionListView: View {
 
     var body: some View {
         List {
-            ForEach(vm.testModel.listOfChampions) { champion in
+            ForEach(vm.championList.listOfChampions) { champion in
                 NavigationLink {
-                    ChampionStatsOverview(vm: vm)
+                    ChampionStatsOverview(vm: vm, champ: champion)
                 } label: {
                     Text("\(champion.champion_name)")
                 }
             }
         }
-        .searchable(text: .constant(""))
+        .navigationTitle("Champions")
+        .searchable(text: .constant(""), placement: .navigationBarDrawer(displayMode: .always))
     }
 }
 

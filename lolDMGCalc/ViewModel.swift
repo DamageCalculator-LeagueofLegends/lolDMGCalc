@@ -11,11 +11,14 @@ class ViewModel: ObservableObject {
     @Published var champion_list: [ChampionModel] = []
     @Published var item_list: [Item] = []
     
-    @Published var testModel: ChampionListModel = ChampionListModel(listOfChampions: [])
+    @Published var championList: ChampionListModel = ChampionListModel()
     
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = AbilityLevel()
 
+    @Published var error: Error?
+    @Published var showingError: Bool = false
+    
     private var apiClient: APIClient = .init()
 
     init() {
@@ -30,19 +33,26 @@ class ViewModel: ObservableObject {
 //    }
 //
 
-    public func testApi() {
+    public func testApi() async {
         let url = "http://127.0.0.1:5000/data"
 
-        Task {
-            
 //            let model: TestModel = try await apiClient.get(url)
 //            let model: ChampionListModel = try await apiClient.get(url)
-            testModel = try await apiClient.get(url)
-            print(testModel)
+        do {
+            let championList: ChampionListModel = try await apiClient.get(url)
+            await MainActor.run {
+                self.championList = championList
+            }
+        } catch {
+            print(error)
+            await MainActor.run {
+                self.error = error
+                self.showingError = true
+            }
         }
     }
 }
 
 struct ChampionListModel: Codable {
-    var listOfChampions: [ChampionModel]
+    var listOfChampions: [ChampionModel] = []
 }

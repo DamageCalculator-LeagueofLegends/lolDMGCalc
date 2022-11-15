@@ -9,15 +9,18 @@ import SwiftUI
 
 struct ChampionStatsOverview: View {
     @ObservedObject var vm: ViewModel
+    var champ: ChampionModel
+
     var body: some View {
         List {
-            
+            Text(champ.champion_name)
+            Text("Attack Damage: " + String(format: "%.0f", champ.base_attack_damage))
         }
     }
 }
 
 struct ChampionStatsOverview_Previews: PreviewProvider {
     static var previews: some View {
-        ChampionStatsOverview(vm: ViewModel())
+        ChampionStatsOverview(vm: ViewModel(), champ: Mock.champ1)
     }
 }

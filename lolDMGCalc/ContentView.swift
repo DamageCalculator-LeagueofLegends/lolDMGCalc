@@ -15,14 +15,20 @@ struct ContentView: View {
             ChooseChampionButtonView(vm: vm)
             ChooseItemButtonsView(vm: vm)
             ChampionConfigView(vm: vm)
-            Button {
-                vm.testApi()
-            } label: {
-                Text("apiTest")
+        }
+        .task {
+            await vm.testApi()
+        }
+        .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
+            Button("reload") {
+                vm.showingError = false
+                Task {
+                    await vm.testApi()
+                }
             }
         }
         .environmentObject(vm)
-        .navigationTitle("Dmg Calculator")
+        .navigationTitle("Dmg Calc")
     }
 }
 
