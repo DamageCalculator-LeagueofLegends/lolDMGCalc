@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm: ViewModel = .init()
+    @StateObject var vm: ViewModel = ViewModel()
 
     var body: some View {
         VStack {
-            ChooseChampionButtonView()
+            ChooseChampionButtonView(vm: vm)
             ChooseItemButtonsView(vm: vm)
             ChampionConfigView(vm: vm)
+            Button {
+                vm.testApi()
+            } label: {
+                Text("apiTest")
+            }
         }
         .environmentObject(vm)
         .navigationTitle("Dmg Calculator")

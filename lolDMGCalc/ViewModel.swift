@@ -8,8 +8,10 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    @Published var champion_list: [Champion] = []
+    @Published var champion_list: [ChampionModel] = []
     @Published var item_list: [Item] = []
+    
+    @Published var testModel: ChampionListModel = ChampionListModel(listOfChampions: [])
     
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = AbilityLevel()
@@ -32,12 +34,15 @@ class ViewModel: ObservableObject {
         let url = "http://127.0.0.1:5000/data"
 
         Task {
-            let model: TestModel = try await apiClient.get(url)
-            print(model)
+            
+//            let model: TestModel = try await apiClient.get(url)
+//            let model: ChampionListModel = try await apiClient.get(url)
+            testModel = try await apiClient.get(url)
+            print(testModel)
         }
     }
 }
 
-struct TestModel: Codable {
-    let names: [String]
+struct ChampionListModel: Codable {
+    var listOfChampions: [ChampionModel]
 }

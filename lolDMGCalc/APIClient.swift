@@ -44,9 +44,10 @@ class APIClient {
 
     private func performRequest<Res: Codable>(_ request: URLRequest) async throws -> Res {
         let (data, response) = try await urlSession.data(for: request)
+        print(data)
 
 //        print(data)
-//        print(response)
+        print(response)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
@@ -59,8 +60,9 @@ class APIClient {
         }
 
         do {
-            return try decoder.decode(Res.self, from: data)
+                return try decoder.decode(Res.self, from: data)
         } catch {
+            print("THE DECODING DID NOT WORK")
             throw error
         }
     }

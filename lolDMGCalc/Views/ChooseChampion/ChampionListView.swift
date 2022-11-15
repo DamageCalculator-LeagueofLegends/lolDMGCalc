@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ChampionListView: View {
-    @EnvironmentObject var vm: ViewModel
+    @ObservedObject var vm: ViewModel
     @State var text: String = ""
-    
+
     var body: some View {
         List {
-            ForEach(vm.champion_list) { champion in
-                Text(champion.champion_name)
+            ForEach(vm.testModel.listOfChampions) { champion in
+                NavigationLink {
+                    ChampionStatsOverview(vm: vm)
+                } label: {
+                    Text("\(champion.champion_name)")
+                }
             }
         }
         .searchable(text: .constant(""))
@@ -24,8 +28,8 @@ struct ChampionListView: View {
 struct ChampionListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChampionListView()
-                .environmentObject(ViewModel())
+            ChampionListView(vm: ViewModel())
+//                .environmentObject(ViewModel())
         }
     }
 }

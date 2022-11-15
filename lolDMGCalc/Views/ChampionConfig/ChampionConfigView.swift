@@ -22,12 +22,6 @@ struct ChampionConfigView: View {
 //            AbilityLevelView(vm: vm, levelKind: .w)
 //            AbilityLevelView(vm: vm, levelKind: .e)
 //            AbilityLevelView(vm: vm, levelKind: .r)
-
-            Button {
-                vm.testApi()
-            } label: {
-                Text("apiTest")
-            }
         }
     }
 }

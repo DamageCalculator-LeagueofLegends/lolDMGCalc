@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct Champion: Identifiable, Codable {
-    var id: UUID = .init()
+struct ChampionModel: Identifiable, Codable {
+    var id: Int {
+        champion_id
+    }
 
     var champion_id: Int
     var champion_name: String

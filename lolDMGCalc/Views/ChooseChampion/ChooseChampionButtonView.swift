@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ChooseChampionButtonView: View {
-
+    @ObservedObject var vm: ViewModel
     var body: some View {
         NavigationLink {
-            ChampionListView()
+            ChampionListView(vm: vm)
         } label: {
             VStack {
                 Text("Choose Champion")
@@ -37,7 +37,7 @@ struct ChooseChampionButtonView: View {
 struct ChooseChampionButton_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChooseChampionButtonView()
+            ChooseChampionButtonView(vm: ViewModel())
         }
     }
 }
