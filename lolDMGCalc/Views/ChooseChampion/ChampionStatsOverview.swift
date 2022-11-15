@@ -12,8 +12,7 @@ struct ChampionStatsOverview: View {
     var champ: ChampionModel
 
     var body: some View {
-        List {
-            Text(champ.champion_name)
+        VStack(alignment: .leading, spacing: 10) {
             Text("Attack Damage: " + String(format: "%.0f", champ.base_attack_damage))
         }
     }

@@ -14,27 +14,7 @@ struct ChampionListView: View {
     var body: some View {
         List {
             ForEach(vm.championList) { champion in
-                NavigationLink {
-                    ChampionStatsOverview(vm: vm, champ: champion)
-                } label: {
-                    HStack {
-                        AsyncImage(
-                            url: URL(string: champion.champion_icon),
-                            content: { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .scaledToFit()
-                                    .frame(maxWidth: 40, maxHeight: 40)
-                            },
-                            placeholder: {
-                                ProgressView()
-                            }
-                        )
-
-                        Text("\(champion.champion_name)")
-                    }
-                }
+                ChampionRowView(vm: vm, champ: champion)
             }
         }
         .task {

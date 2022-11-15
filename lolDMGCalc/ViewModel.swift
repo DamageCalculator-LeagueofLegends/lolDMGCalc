@@ -11,7 +11,7 @@ class ViewModel: ObservableObject {
     @Published var championList: [ChampionModel] = []
     @Published var item_list: [Item] = []
 
-    @Published var hasChampionChosen: Bool = false
+    @Published var selectedChampion: ChampionModel? = nil
 
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = .init()

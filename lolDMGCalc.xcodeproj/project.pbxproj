@@ -27,6 +27,7 @@
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
 		49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */; };
 		49C30FB929240C2000414366 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB829240C2000414366 /* ChampionService.swift */; };
+		49C30FBB29241B2900414366 /* ChampionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FBA29241B2900414366 /* ChampionRowView.swift */; };
 		49EE187F29229FF700B804F8 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE187E29229FF700B804F8 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsOverview.swift; sourceTree = "<group>"; };
 		49C30FB829240C2000414366 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
+		49C30FBA29241B2900414366 /* ChampionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionRowView.swift; sourceTree = "<group>"; };
 		49EE187E29229FF700B804F8 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				49550DA72922DB5B00F13E9F /* ChampionConfig */,
 				495E54852922D82A00C36022 /* ChooseItemButtonsView.swift */,
 				49476BDD2911C1B300457FEE /* ItemListView.swift */,
+				49C30FBA29241B2900414366 /* ChampionRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				49476BE02911CA1D00457FEE /* Mock.swift in Sources */,
 				49550DA92922DBE500F13E9F /* ChampionConfigView.swift in Sources */,
 				49476BDE2911C1B300457FEE /* ItemListView.swift in Sources */,
+				49C30FBB29241B2900414366 /* ChampionRowView.swift in Sources */,
 				49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */,
 				49550DAD2922DF1D00F13E9F /* AbilityLevelView.swift in Sources */,
 				49550DAF2922E25500F13E9F /* AbilityLevel.swift in Sources */,

@@ -16,23 +16,26 @@ struct ChooseChampionButtonView: View {
         } label: {
             VStack {
                 Text("Choose Champion")
-                if vm.hasChampionChosen {
-                    Image(systemName: "person")
-                } else {
+                if let champion = vm.selectedChampion {
                     AsyncImage(
-                        url: URL(string: "https://ddragon.leagueoflegends.com/cdn/12.19.1/img/champion/Seraphine.png"),
+                        url: URL(string: champion.champion_icon),
                         content: { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .scaledToFit()
                                 .frame(maxWidth: 90, maxHeight: 90)
-                            //                            .cornerRadius(8)
+                                .cornerRadius(8)
                         },
                         placeholder: {
                             ProgressView()
                         }
                     )
+                } else {
+                    Rectangle()
+                        .frame(width: 90, height: 90)
+                        .foregroundColor(.gray.opacity(0.4))
+                        .cornerRadius(10)
                 }
             }
 //            .navigationTitle("Dmg Calc")
