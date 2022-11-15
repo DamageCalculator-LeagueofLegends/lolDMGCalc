@@ -1,5 +1,5 @@
 //
-//  ChooseChampion.swift
+//  ChampionListView.swift
 //  lolDMGCalc
 //
 //  Created by Laurin Notemann on 29.10.22.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct ChooseChampion: View {
-    @ObservedObject var vm: ViewModel
+struct ChampionListView: View {
+    @EnvironmentObject var vm: ViewModel
     @State var text: String = ""
+    
     var body: some View {
         List {
             ForEach(vm.champion_list) { champion in
@@ -20,10 +21,11 @@ struct ChooseChampion: View {
     }
 }
 
-struct ChooseChampion_Previews: PreviewProvider {
+struct ChampionListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChooseChampion(vm: ViewModel())
+            ChampionListView()
+                .environmentObject(ViewModel())
         }
     }
 }

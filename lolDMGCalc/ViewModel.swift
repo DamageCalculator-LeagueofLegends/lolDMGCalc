@@ -10,6 +10,9 @@ import Foundation
 class ViewModel: ObservableObject {
     @Published var champion_list: [Champion] = []
     @Published var item_list: [Item] = []
+    
+    @Published var championLevel: Double = 1
+    @Published var abilityLevel: AbilityLevel = AbilityLevel()
 
     private var apiClient: APIClient = .init()
 

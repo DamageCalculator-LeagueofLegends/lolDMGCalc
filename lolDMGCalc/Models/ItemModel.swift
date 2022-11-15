@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Identifiable {
+struct Item: Identifiable, Codable {
     var id: UUID = .init()
 
     var item_id: Int
@@ -18,8 +18,8 @@ struct Item: Identifiable {
     var is_legendary: Bool
     var is_mythic: Bool
 
-    var item_builds_from: [Any]
-    var item_builds_into: [Any]
+//    var item_builds_from: [Any]
+//    var item_builds_into: [Any]
 
     var item_no_effects: Bool
 

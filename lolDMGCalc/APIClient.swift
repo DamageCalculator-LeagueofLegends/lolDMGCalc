@@ -22,21 +22,23 @@ class APIClient {
 
         return try await performRequest(reqeust)
     }
-    
+
     public func post<Req: Codable, Res: Codable>(_ url: URL, payload: Req) async throws -> Res {
         return try await write(url, payload: payload, method: "POST")
     }
+
     public func update<Req: Codable, Res: Codable>(_ url: URL, payload: Req) async throws -> Res {
         return try await write(url, payload: payload, method: "PATCH")
     }
-    private func write<Req: Codable, Res: Codable>(_ url: URL, payload: Req, method: String) async throws -> Res{
+
+    private func write<Req: Codable, Res: Codable>(_ url: URL, payload: Req, method: String) async throws -> Res {
         var request = URLRequest(url: url)
-        
+
         let json = try encoder.encode(payload)
         request.httpBody = json
-        
+
         request.httpMethod = method
-        
+
         return try await performRequest(request)
     }
 
