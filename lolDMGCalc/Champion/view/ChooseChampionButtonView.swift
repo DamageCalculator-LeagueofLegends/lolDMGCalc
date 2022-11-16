@@ -14,30 +14,16 @@ struct ChooseChampionButtonView: View {
         NavigationLink {
             ChampionListView(vm: vm)
         } label: {
-            VStack {
-                Text("Choose Champion")
+            VStack (alignment: .leading, spacing: 3){
+                Text("Champion:")
+                    .foregroundColor(Color("Black"))
                 if let champion = vm.selectedChampion {
-                    AsyncImage(
-                        url: URL(string: champion.champion_icon),
-                        content: { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .scaledToFit()
-                                .frame(maxWidth: 90, maxHeight: 90)
-                                .cornerRadius(8)
-                        },
-                        placeholder: {
-                            ProgressView()
-                        }
-                    )
+                    AsyncImageView(url: champion.champion_icon, size: 90)
                 } else {
-                    Rectangle()
-                        .frame(width: 90, height: 90)
-                        .foregroundColor(.gray.opacity(0.4))
-                        .cornerRadius(10)
+                    EmptyImageView(size: 90)
                 }
             }
+            .buttonStyle(.borderless)
 //            .navigationTitle("Dmg Calc")
         }
     }

@@ -8,7 +8,9 @@
 import Foundation
 
 struct ItemModel: Identifiable, Codable {
-    var id: UUID = .init()
+    var id: Int {
+        item_id
+    }
 
     var item_id: Int
     var item_name: String

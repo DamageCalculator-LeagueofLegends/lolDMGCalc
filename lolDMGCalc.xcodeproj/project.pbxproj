@@ -25,6 +25,8 @@
 		496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779B9290D5D2300D25FA4 /* ChampionListView.swift */; };
 		496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779BB290D5D9400D25FA4 /* ChampionModel.swift */; };
 		4975028729251C5A004E6454 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975028629251C5A004E6454 /* ItemService.swift */; };
+		49750293292582B4004E6454 /* EmptyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49750292292582B4004E6454 /* EmptyImageView.swift */; };
+		49750295292583C3004E6454 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49750294292583C3004E6454 /* AsyncImageView.swift */; };
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
 		49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */; };
 		49C30FB929240C2000414366 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB829240C2000414366 /* ChampionService.swift */; };
@@ -52,6 +54,8 @@
 		496779B9290D5D2300D25FA4 /* ChampionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionListView.swift; sourceTree = "<group>"; };
 		496779BB290D5D9400D25FA4 /* ChampionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionModel.swift; sourceTree = "<group>"; };
 		4975028629251C5A004E6454 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		49750292292582B4004E6454 /* EmptyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyImageView.swift; sourceTree = "<group>"; };
+		49750294292583C3004E6454 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsOverview.swift; sourceTree = "<group>"; };
 		49C30FB829240C2000414366 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			children = (
 				49476BDF2911CA1D00457FEE /* Mock.swift */,
 				49476BE329127B5600457FEE /* Help.swift */,
+				49750292292582B4004E6454 /* EmptyImageView.swift */,
+				49750294292583C3004E6454 /* AsyncImageView.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -132,8 +138,8 @@
 		4975028929252BC8004E6454 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				496779B9290D5D2300D25FA4 /* ChampionListView.swift */,
 				495E54812922D70B00C36022 /* ChooseChampionButtonView.swift */,
+				496779B9290D5D2300D25FA4 /* ChampionListView.swift */,
 				49C30FBA29241B2900414366 /* ChampionRowView.swift */,
 				49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */,
 			);
@@ -282,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49750295292583C3004E6454 /* AsyncImageView.swift in Sources */,
 				4975028729251C5A004E6454 /* ItemService.swift in Sources */,
 				49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */,
 				496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */,
@@ -300,6 +307,7 @@
 				49550DAD2922DF1D00F13E9F /* AbilityLevelView.swift in Sources */,
 				49550DAF2922E25500F13E9F /* AbilityLevel.swift in Sources */,
 				49EE187F29229FF700B804F8 /* ImageService.swift in Sources */,
+				49750293292582B4004E6454 /* EmptyImageView.swift in Sources */,
 				495E54822922D70B00C36022 /* ChooseChampionButtonView.swift in Sources */,
 				496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */,
 				490DB5D828FD53DA004A429F /* lolDMGCalcApp.swift in Sources */,

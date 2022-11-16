@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm: ViewModel = ViewModel()
+    @StateObject var vm: ViewModel
 
     var body: some View {
-        VStack {
-            ChooseChampionButtonView(vm: vm)
-            ChooseItemButtonsView(vm: vm)
+        VStack(spacing: 20) {
+            HStack (alignment: .top) {
+                ChooseChampionButtonView(vm: vm)
+                ChooseItemButtonsView(vm: vm)
+            }
+            .padding(.top, 10)
             ChampionConfigView(vm: vm)
+            
         }
         .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
             Button("reload") {
@@ -25,13 +29,14 @@ struct ContentView: View {
         }
         .environmentObject(vm)
         .navigationTitle("Dmg Calc")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ContentView()
+            ContentView(vm: Mock.vm)
         }
     }
 }

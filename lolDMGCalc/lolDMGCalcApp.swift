@@ -12,7 +12,8 @@ struct lolDMGCalcApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+//                ContentView(vm: ViewModel)
+                ContentView(vm: Mock.vm)
             }
         }
     }

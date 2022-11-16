@@ -12,13 +12,8 @@ class ViewModel: ObservableObject {
     @Published var itemList: [ItemModel] = []
 
     @Published var selectedChampion: ChampionModel? = nil
-    
-    @Published var selectedItemOne: ItemModel? = nil
-    @Published var selectedItemTwo: ItemModel? = nil
-    @Published var selectedItemThree: ItemModel? = nil
-    @Published var selectedItemFour: ItemModel? = nil
-    @Published var selectedItemFive: ItemModel? = nil
-    @Published var selectedItemSix: ItemModel? = nil
+
+    @Published var selecteditemList: [ItemModel?] = [nil, nil, nil, nil, nil, nil]
 
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = .init()
@@ -33,7 +28,6 @@ class ViewModel: ObservableObject {
     init(championService: ChampionServiceProtocol = ChampionService(), itemService: ItemServiceProtocol = ItemService()) {
         self.itemService = itemService
         self.championService = championService
-        
     }
 
     public func fetchChampions() async {
@@ -50,7 +44,7 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
+
     public func fetchIems() async {
         do {
             let allItems: [ItemModel] = try await itemService.getItems()

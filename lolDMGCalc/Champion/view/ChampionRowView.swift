@@ -22,22 +22,9 @@ struct ChampionRowView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     HStack {
-                        AsyncImage(
-                            url: URL(string: champ.champion_icon),
-                            content: { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .scaledToFit()
-                                    .frame(height: 40)
-                                    .cornerRadius(4)
-                            },
-                            placeholder: {
-                                ProgressView()
-                            }
-                        )
+                        AsyncImageView(url: champ.champion_icon, size: 40)
                         Text("\(champ.champion_name)")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("Black"))
                         Spacer()
                     }
                 }
@@ -46,6 +33,7 @@ struct ChampionRowView: View {
                     showingDetail.toggle()
                 } label: {
                     Image(systemName: "info.circle")
+                        .padding([.leading, .vertical], 10)
                 }
                 .buttonStyle(.borderless)
             }

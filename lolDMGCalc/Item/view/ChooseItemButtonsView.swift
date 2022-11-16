@@ -11,32 +11,26 @@ struct ChooseItemButtonsView: View {
     @ObservedObject var vm: ViewModel
 
     private let flexibleColoumns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible()),
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
     ]
 
     var body: some View {
-        Text("Choose Items:")
-        LazyVGrid(columns: flexibleColoumns) {
-            ForEach(1 ..< 7) { _ in
-                NavigationLink {
-                    ItemListView(vm: vm)
-                } label: {
-                    AsyncImage(
-                        url: URL(string: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6653_mage_t4_liandrysanguish.png"),
-                        content: { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .scaledToFit()
-                                .frame(maxWidth: 50, maxHeight: 50)
-                                .cornerRadius(8)
-                        },
-                        placeholder: {
-                            ProgressView()
+        VStack(spacing: 3) {
+            Text("Items:")
+            LazyVGrid(columns: flexibleColoumns) {
+                ForEach(0 ..< 6) { i in
+                    NavigationLink {
+                        ItemListView(vm: vm, numberOfButton: i)
+                    } label: {
+                        if let item = vm.selecteditemList[i] {
+                            AsyncImageView(url: item.item_icon, size: 40)
+                        } else {
+                            EmptyImageView(size: 40)
                         }
-                    )
+                    }
+                    .buttonStyle(.borderless)
                 }
             }
         }
