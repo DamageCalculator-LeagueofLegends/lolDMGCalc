@@ -13,33 +13,25 @@ protocol ChampionServiceProtocol {
     func getChampions() async throws -> [ChampionModel]
 }
 
-
 // MARK: Service --------------------------------------
 
 class ChampionService: ChampionServiceProtocol {
-    
-    private let client: APIClient = APIClient()
-    
-    let url = "http://127.0.0.1:5000/data"
-    
+    private let client: APIClient = .init()
+    let url = "http://127.0.0.1:5000/getInitChampions"
+
     func getChampions() async throws -> [ChampionModel] {
         let data: ChampionListModel = try await client.get(url)
         return data.listOfChampions
     }
 }
 
-
 // MARK: Mock Service -----------------------------------
 
 class ChampionServiceMock: ChampionServiceProtocol {
-    
     func getChampions() async throws -> [ChampionModel] {
         return Mock.champions
     }
 }
-
-
-
 
 struct ChampionListModel: Codable {
     var listOfChampions: [ChampionModel] = []

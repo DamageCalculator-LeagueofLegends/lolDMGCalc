@@ -9,9 +9,16 @@ import Foundation
 
 class ViewModel: ObservableObject {
     @Published var championList: [ChampionModel] = []
-    @Published var item_list: [Item] = []
+    @Published var itemList: [ItemModel] = []
 
     @Published var selectedChampion: ChampionModel? = nil
+    
+    @Published var selectedItemOne: ItemModel? = nil
+    @Published var selectedItemTwo: ItemModel? = nil
+    @Published var selectedItemThree: ItemModel? = nil
+    @Published var selectedItemFour: ItemModel? = nil
+    @Published var selectedItemFive: ItemModel? = nil
+    @Published var selectedItemSix: ItemModel? = nil
 
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = .init()
@@ -21,10 +28,12 @@ class ViewModel: ObservableObject {
 
     private var apiClient: APIClient = .init()
     private var championService: ChampionServiceProtocol
+    private var itemService: ItemServiceProtocol
 
-    init(championService: ChampionServiceProtocol = ChampionService()) {
-        item_list = Mock.items
+    init(championService: ChampionServiceProtocol = ChampionService(), itemService: ItemServiceProtocol = ItemService()) {
+        self.itemService = itemService
         self.championService = championService
+        
     }
 
     public func fetchChampions() async {
@@ -32,6 +41,21 @@ class ViewModel: ObservableObject {
             let champions: [ChampionModel] = try await championService.getChampions()
             await MainActor.run {
                 self.championList = champions
+            }
+        } catch {
+            print(error)
+            await MainActor.run {
+                self.error = error
+                self.showingError = true
+            }
+        }
+    }
+    
+    public func fetchIems() async {
+        do {
+            let allItems: [ItemModel] = try await itemService.getItems()
+            await MainActor.run {
+                self.itemList = allItems
             }
         } catch {
             print(error)

@@ -21,8 +21,7 @@ struct ContentView: View {
                 vm.showingError = false
                 Task {
                     await vm.fetchChampions()
-                }
-            }
+                }            }
         }
         .environmentObject(vm)
         .navigationTitle("Dmg Calc")

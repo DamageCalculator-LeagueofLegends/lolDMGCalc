@@ -15,7 +15,7 @@ struct AbilityLevelView: View {
     @State private var value: Int = 0
     
     var body: some View {
-        HStack {
+        VStack(alignment: .leading) {
             Text("\(levelKind.rawValue) Level:")
                 .frame(minWidth: 65)
             Picker("Pick", selection: $value) {

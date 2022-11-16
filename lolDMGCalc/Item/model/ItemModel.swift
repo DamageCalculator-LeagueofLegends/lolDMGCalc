@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Identifiable, Codable {
+struct ItemModel: Identifiable, Codable {
     var id: UUID = .init()
 
     var item_id: Int

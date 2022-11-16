@@ -24,6 +24,7 @@
 		495E54862922D82A00C36022 /* ChooseItemButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E54852922D82A00C36022 /* ChooseItemButtonsView.swift */; };
 		496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779B9290D5D2300D25FA4 /* ChampionListView.swift */; };
 		496779BC290D5D9400D25FA4 /* ChampionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496779BB290D5D9400D25FA4 /* ChampionModel.swift */; };
+		4975028729251C5A004E6454 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975028629251C5A004E6454 /* ItemService.swift */; };
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
 		49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */; };
 		49C30FB929240C2000414366 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB829240C2000414366 /* ChampionService.swift */; };
@@ -50,6 +51,7 @@
 		495E54852922D82A00C36022 /* ChooseItemButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseItemButtonsView.swift; sourceTree = "<group>"; };
 		496779B9290D5D2300D25FA4 /* ChampionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionListView.swift; sourceTree = "<group>"; };
 		496779BB290D5D9400D25FA4 /* ChampionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionModel.swift; sourceTree = "<group>"; };
+		4975028629251C5A004E6454 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsOverview.swift; sourceTree = "<group>"; };
 		49C30FB829240C2000414366 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
@@ -89,13 +91,12 @@
 			children = (
 				490DB5D728FD53DA004A429F /* lolDMGCalcApp.swift */,
 				490DB5D928FD53DA004A429F /* ContentView.swift */,
-				4943B429291C28760034E52A /* APIClient.swift */,
 				49BD46ED290D63BC00192A0C /* ViewModel.swift */,
-				49C30FB829240C2000414366 /* ChampionService.swift */,
-				49550DAE2922E25500F13E9F /* AbilityLevel.swift */,
+				4975028B29252C0B004E6454 /* Service */,
+				4975028829252BB9004E6454 /* Champion */,
+				4975028C29252C43004E6454 /* Item */,
+				4975028F29252C81004E6454 /* Configurations */,
 				495E54802922D68800C36022 /* Others */,
-				495E547F2922D67300C36022 /* Models */,
-				495E547E2922D65C00C36022 /* Views */,
 				490DB5DB28FD53DA004A429F /* Assets.xcassets */,
 				490DB5DD28FD53DA004A429F /* Preview Content */,
 			);
@@ -110,55 +111,105 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		49550DA72922DB5B00F13E9F /* ChampionConfig */ = {
-			isa = PBXGroup;
-			children = (
-				495E54812922D70B00C36022 /* ChooseChampionButtonView.swift */,
-				49550DA82922DBE500F13E9F /* ChampionConfigView.swift */,
-				49550DAA2922DE5D00F13E9F /* ChampionLevelSliderView.swift */,
-				49550DAC2922DF1D00F13E9F /* AbilityLevelView.swift */,
-			);
-			path = ChampionConfig;
-			sourceTree = "<group>";
-		};
-		495E547E2922D65C00C36022 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				49C30FB52923CB5F00414366 /* ChooseChampion */,
-				49550DA72922DB5B00F13E9F /* ChampionConfig */,
-				495E54852922D82A00C36022 /* ChooseItemButtonsView.swift */,
-				49476BDD2911C1B300457FEE /* ItemListView.swift */,
-				49C30FBA29241B2900414366 /* ChampionRowView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		495E547F2922D67300C36022 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				49476BE12911CBAC00457FEE /* ItemModel.swift */,
-				496779BB290D5D9400D25FA4 /* ChampionModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		495E54802922D68800C36022 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				49EE187E29229FF700B804F8 /* ImageService.swift */,
 				49476BDF2911CA1D00457FEE /* Mock.swift */,
 				49476BE329127B5600457FEE /* Help.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
 		};
-		49C30FB52923CB5F00414366 /* ChooseChampion */ = {
+		4975028829252BB9004E6454 /* Champion */ = {
+			isa = PBXGroup;
+			children = (
+				4975028929252BC8004E6454 /* view */,
+				4975028A29252BCE004E6454 /* model */,
+			);
+			path = Champion;
+			sourceTree = "<group>";
+		};
+		4975028929252BC8004E6454 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				496779B9290D5D2300D25FA4 /* ChampionListView.swift */,
+				495E54812922D70B00C36022 /* ChooseChampionButtonView.swift */,
+				49C30FBA29241B2900414366 /* ChampionRowView.swift */,
 				49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */,
 			);
-			path = ChooseChampion;
+			path = view;
+			sourceTree = "<group>";
+		};
+		4975028A29252BCE004E6454 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				496779BB290D5D9400D25FA4 /* ChampionModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4975028B29252C0B004E6454 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				49EE187E29229FF700B804F8 /* ImageService.swift */,
+				4943B429291C28760034E52A /* APIClient.swift */,
+				49C30FB829240C2000414366 /* ChampionService.swift */,
+				4975028629251C5A004E6454 /* ItemService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4975028C29252C43004E6454 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				4975028E29252C58004E6454 /* view */,
+				4975028D29252C51004E6454 /* model */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		4975028D29252C51004E6454 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				49476BE12911CBAC00457FEE /* ItemModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4975028E29252C58004E6454 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				495E54852922D82A00C36022 /* ChooseItemButtonsView.swift */,
+				49476BDD2911C1B300457FEE /* ItemListView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4975028F29252C81004E6454 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4975029029252C9B004E6454 /* view */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		4975029029252C9B004E6454 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				49550DA82922DBE500F13E9F /* ChampionConfigView.swift */,
+				49550DAA2922DE5D00F13E9F /* ChampionLevelSliderView.swift */,
+				49550DAC2922DF1D00F13E9F /* AbilityLevelView.swift */,
+				4975029129252CB2004E6454 /* model */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4975029129252CB2004E6454 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				49550DAE2922E25500F13E9F /* AbilityLevel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975028729251C5A004E6454 /* ItemService.swift in Sources */,
 				49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */,
 				496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */,
 				49C30FB929240C2000414366 /* ChampionService.swift in Sources */,
