@@ -68,4 +68,6 @@ struct ItemModel: Identifiable, Codable {
     var mythic_omnivamp_flat_percentage: Double
     var mythic_tenacity_flat: Double
     var mythic_slow_resistance: Double
+    
+    var has_active: Bool
 }
