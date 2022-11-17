@@ -14,7 +14,7 @@ struct ChooseChampionButtonView: View {
         NavigationLink {
             ChampionListView(vm: vm)
         } label: {
-            VStack (alignment: .leading, spacing: 3){
+            VStack (alignment: .leading, spacing: 7){
                 Text("Champion:")
                     .foregroundColor(Color("Black"))
                 if let champion = vm.selectedChampion {

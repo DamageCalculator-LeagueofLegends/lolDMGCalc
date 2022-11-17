@@ -23,19 +23,23 @@ struct ItemListView: View {
                     HStack {
                         AsyncImageView(url: item.item_icon, size: 50)
                         Text(item.item_name)
+                            .foregroundColor(Color("Black"))
                     }
                 }
-                .buttonStyle(.plain)
             }
         }
         .task {
             await vm.fetchIems()
         }
+        .navigationTitle("Items")
+        .searchable(text: .constant(""), placement: .navigationBarDrawer(displayMode: .always))
     }
 }
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(vm: Mock.vm, numberOfButton: 1)
+        NavigationStack {
+            ItemListView(vm: Mock.vm, numberOfButton: 1)
+        }
     }
 }

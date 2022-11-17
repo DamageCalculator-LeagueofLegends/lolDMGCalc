@@ -23,7 +23,7 @@ struct AsyncImageView: View {
                     .cornerRadius(size/10)
             },
             placeholder: {
-                EmptyImageView(size: size)
+                EmptyImageView(size: size, clickable: false)
                 
             }
         )

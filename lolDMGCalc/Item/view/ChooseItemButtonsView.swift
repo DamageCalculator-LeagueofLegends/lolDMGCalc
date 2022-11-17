@@ -17,7 +17,7 @@ struct ChooseItemButtonsView: View {
     ]
 
     var body: some View {
-        VStack(spacing: 3) {
+        VStack(spacing: 7) {
             Text("Items:")
             LazyVGrid(columns: flexibleColoumns) {
                 ForEach(0 ..< 6) { i in
@@ -30,7 +30,6 @@ struct ChooseItemButtonsView: View {
                             EmptyImageView(size: 40)
                         }
                     }
-                    .buttonStyle(.borderless)
                 }
             }
         }
