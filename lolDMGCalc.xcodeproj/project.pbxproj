@@ -29,6 +29,10 @@
 		49750295292583C3004E6454 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49750294292583C3004E6454 /* AsyncImageView.swift */; };
 		498BFEF4292638A700494C10 /* ChooseDummyStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFEF3292638A700494C10 /* ChooseDummyStatsView.swift */; };
 		498BFEF6292638F000494C10 /* DummyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFEF5292638F000494C10 /* DummyTextField.swift */; };
+		498BFEFB292643B700494C10 /* AbilityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFEFA292643B700494C10 /* AbilityActions.swift */; };
+		498BFEFD292643D100494C10 /* AddNewAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFEFC292643D100494C10 /* AddNewAbility.swift */; };
+		498BFEFF292643DB00494C10 /* AbilityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFEFE292643DB00494C10 /* AbilityListView.swift */; };
+		498BFF01292644AF00494C10 /* AvailableAbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BFF00292644AF00494C10 /* AvailableAbilitiesView.swift */; };
 		49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BD46ED290D63BC00192A0C /* ViewModel.swift */; };
 		49BEF650292633B500EEE545 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEF64F292633B500EEE545 /* Dummy.swift */; };
 		49C30FB72923CBAE00414366 /* ChampionStatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */; };
@@ -61,6 +65,10 @@
 		49750294292583C3004E6454 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		498BFEF3292638A700494C10 /* ChooseDummyStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseDummyStatsView.swift; sourceTree = "<group>"; };
 		498BFEF5292638F000494C10 /* DummyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTextField.swift; sourceTree = "<group>"; };
+		498BFEFA292643B700494C10 /* AbilityActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityActions.swift; sourceTree = "<group>"; };
+		498BFEFC292643D100494C10 /* AddNewAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAbility.swift; sourceTree = "<group>"; };
+		498BFEFE292643DB00494C10 /* AbilityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityListView.swift; sourceTree = "<group>"; };
+		498BFF00292644AF00494C10 /* AvailableAbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableAbilitiesView.swift; sourceTree = "<group>"; };
 		49BD46ED290D63BC00192A0C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		49BEF64F292633B500EEE545 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		49C30FB62923CBAE00414366 /* ChampionStatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionStatsOverview.swift; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 				4975028C29252C43004E6454 /* Item */,
 				4975028F29252C81004E6454 /* Configurations */,
 				49BEF64A2926333500EEE545 /* DummyStats */,
+				498BFEF72926435E00494C10 /* AbilityUsage */,
 				495E54802922D68800C36022 /* Utilities */,
 				490DB5DB28FD53DA004A429F /* Assets.xcassets */,
 				490DB5DD28FD53DA004A429F /* Preview Content */,
@@ -226,6 +235,33 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		498BFEF72926435E00494C10 /* AbilityUsage */ = {
+			isa = PBXGroup;
+			children = (
+				498BFEF82926437600494C10 /* view */,
+				498BFEF92926438500494C10 /* model */,
+			);
+			path = AbilityUsage;
+			sourceTree = "<group>";
+		};
+		498BFEF82926437600494C10 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				498BFEFC292643D100494C10 /* AddNewAbility.swift */,
+				498BFF00292644AF00494C10 /* AvailableAbilitiesView.swift */,
+				498BFEFE292643DB00494C10 /* AbilityListView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		498BFEF92926438500494C10 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				498BFEFA292643B700494C10 /* AbilityActions.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		49BEF64A2926333500EEE545 /* DummyStats */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,13 +362,17 @@
 				49BEF650292633B500EEE545 /* Dummy.swift in Sources */,
 				49BD46EE290D63BC00192A0C /* ViewModel.swift in Sources */,
 				496779BA290D5D2300D25FA4 /* ChampionListView.swift in Sources */,
+				498BFEFB292643B700494C10 /* AbilityActions.swift in Sources */,
 				49C30FB929240C2000414366 /* ChampionService.swift in Sources */,
 				49476BE429127B5600457FEE /* Help.swift in Sources */,
 				4943B42A291C28760034E52A /* APIClient.swift in Sources */,
 				49476BE22911CBAC00457FEE /* ItemModel.swift in Sources */,
 				49550DAB2922DE5D00F13E9F /* ChampionLevelSliderView.swift in Sources */,
+				498BFEFD292643D100494C10 /* AddNewAbility.swift in Sources */,
 				498BFEF6292638F000494C10 /* DummyTextField.swift in Sources */,
+				498BFF01292644AF00494C10 /* AvailableAbilitiesView.swift in Sources */,
 				490DB5DA28FD53DA004A429F /* ContentView.swift in Sources */,
+				498BFEFF292643DB00494C10 /* AbilityListView.swift in Sources */,
 				498BFEF4292638A700494C10 /* ChooseDummyStatsView.swift in Sources */,
 				495E54862922D82A00C36022 /* ChooseItemButtonsView.swift in Sources */,
 				49476BE02911CA1D00457FEE /* Mock.swift in Sources */,

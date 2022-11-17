@@ -19,7 +19,10 @@ class ViewModel: ObservableObject {
 
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = .init()
-
+    
+    @Published var availableActions: [Action] = []
+    @Published var selectedActions: [Action] = []
+    
     @Published var error: Error?
     @Published var showingError: Bool = false
 
@@ -30,6 +33,7 @@ class ViewModel: ObservableObject {
     init(championService: ChampionServiceProtocol = ChampionService(), itemService: ItemServiceProtocol = ItemService()) {
         self.itemService = itemService
         self.championService = championService
+        self.availableActions = Mock.actions
     }
 
     public func fetchChampions() async {

@@ -21,6 +21,9 @@ struct ContentView: View {
                 ChampionConfigView(vm: vm)
                 Divider()
                 ChooseDummyStatsView(vm: vm)
+                Divider()
+                AddNewAbility(vm: vm)
+                AbilityListView(vm: vm)
             }
             .padding(20)
             //        .background(Color("White"))
