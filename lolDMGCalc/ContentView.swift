@@ -12,20 +12,29 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            HStack (alignment: .top) {
+            HStack(alignment: .top) {
                 ChooseChampionButtonView(vm: vm)
                 ChooseItemButtonsView(vm: vm)
             }
             .padding(.top, 10)
-            ChampionConfigView(vm: vm)
-            
+            ScrollView {
+                ChampionConfigView(vm: vm)
+                Divider()
+                ChooseDummyStatsView(vm: vm)
+            }
+            .padding(20)
+            //        .background(Color("White"))
+            .cornerRadius(10)
+            .padding(20)
+            .background(Material.ultraThin)
         }
         .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
             Button("reload") {
                 vm.showingError = false
                 Task {
                     await vm.fetchChampions()
-                }            }
+                }
+            }
         }
         .environmentObject(vm)
         .navigationTitle("Dmg Calc")

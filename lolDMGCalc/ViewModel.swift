@@ -10,6 +10,8 @@ import Foundation
 class ViewModel: ObservableObject {
     @Published var championList: [ChampionModel] = []
     @Published var itemList: [ItemModel] = []
+    
+    @Published var dummy: Dummy = Dummy(health: 1000, armor: 0, magicResistance: 0)
 
     @Published var selectedChampion: ChampionModel? = nil
 

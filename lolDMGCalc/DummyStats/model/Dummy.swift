@@ -7,9 +7,8 @@
 
 import Foundation
 
-class Dummy {
-    var health: Double
-    var armor: Double
-    var magicResistance: Double
-    
+struct Dummy {
+    var health: Int
+    var armor: Int
+    var magicResistance: Int
 }

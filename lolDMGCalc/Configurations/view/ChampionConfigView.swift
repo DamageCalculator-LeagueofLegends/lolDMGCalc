@@ -11,22 +11,15 @@ struct ChampionConfigView: View {
     @ObservedObject var vm: ViewModel
 
     var body: some View {
-        ScrollView {
-            VStack {
-                ChampionLevelSliderView(vm: vm)
-                ForEach(LevelKind.allCases, id: \.self) { level in
-                    Divider()
-                    AbilityLevelView(vm: vm, levelKind: level)
-                }
-                
-                Spacer()
+        VStack {
+            ChampionLevelSliderView(vm: vm)
+            ForEach(LevelKind.allCases, id: \.self) { level in
+                Divider()
+                AbilityLevelView(vm: vm, levelKind: level)
             }
+
+            Spacer()
         }
-        .padding(20)
-//        .background(Color("White"))
-        .cornerRadius(10)
-        .padding(20)
-        .background(Material.ultraThin)
     }
 }
 
