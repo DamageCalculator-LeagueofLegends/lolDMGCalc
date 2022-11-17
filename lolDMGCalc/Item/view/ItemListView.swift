@@ -15,6 +15,18 @@ struct ItemListView: View {
 
     var body: some View {
         List {
+            Button {
+                vm.selecteditemList[numberOfButton] = nil
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                HStack {
+                    EmptyImageView(size: 50, clickable: false)
+                    Text("No Item")
+                        .foregroundColor(Color("Black"))
+                }
+            }
+
+            
             ForEach(vm.itemList) { item in
                 Button {
                     vm.selecteditemList[numberOfButton] = item

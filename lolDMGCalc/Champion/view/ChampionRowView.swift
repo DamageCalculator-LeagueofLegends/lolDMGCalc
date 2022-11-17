@@ -17,31 +17,38 @@ struct ChampionRowView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Button {
-                    vm.selectedChampion = champ
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    HStack {
-                        AsyncImageView(url: champ.champion_icon, size: 40)
-                        Text("\(champ.champion_name)")
-                            .foregroundColor(Color("Black"))
-                        Spacer()
-                    }
-                }
-
-                Button {
-                    showingDetail.toggle()
-                } label: {
-                    Image(systemName: "info.circle")
-                        .padding([.leading, .vertical], 10)
-                }
-                .buttonStyle(.borderless)
+                champButton
+                detail
             }
             if showingDetail {
                 ChampionStatsOverview(vm: vm, champ: champ)
                     .padding(.leading, 50)
             }
         }
+    }
+    
+    var champButton: some View {
+        Button {
+            vm.selectedChampion = champ
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            HStack {
+                AsyncImageView(url: champ.champion_icon, size: 40)
+                Text("\(champ.champion_name)")
+                    .foregroundColor(Color("Black"))
+                Spacer()
+            }
+        }
+    }
+    
+    var detail: some View {
+        Button {
+            showingDetail.toggle()
+        } label: {
+            Image(systemName: "info.circle")
+                .padding([.leading, .vertical], 10)
+        }
+        .buttonStyle(.borderless)
     }
 }
 

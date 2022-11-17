@@ -14,22 +14,26 @@ struct ContentView: View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
                 ChooseChampionButtonView(vm: vm)
-                ChooseItemButtonsView(vm: vm)
+                if vm.selectedChampion != nil {
+                    ChooseItemButtonsView(vm: vm)
+                }
             }
             .padding(.top, 10)
-            ScrollView {
-                ChampionConfigView(vm: vm)
-                Divider()
-                ChooseDummyStatsView(vm: vm)
-                Divider()
-                AddNewAbility(vm: vm)
-                AbilityListView(vm: vm)
+            if vm.selectedChampion != nil {
+                ScrollView {
+                    ChampionConfigView(vm: vm)
+                    Divider()
+                    ChooseDummyStatsView(vm: vm)
+                    Divider()
+                    AddNewAbility(vm: vm)
+                    AbilityListView(vm: vm)
+                }
+                .padding(20)
+                //        .background(Color("White"))
+                .cornerRadius(10)
+                .padding(20)
+                .background(Material.ultraThin)
             }
-            .padding(20)
-            //        .background(Color("White"))
-            .cornerRadius(10)
-            .padding(20)
-            .background(Material.ultraThin)
         }
         .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
             Button("reload") {
