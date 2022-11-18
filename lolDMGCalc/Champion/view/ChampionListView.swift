@@ -15,7 +15,7 @@ struct ChampionListView: View {
     var body: some View {
         List {
             noChampButton
-            ForEach(vm.championList) { champion in
+            ForEach(vm.champions) { champion in
                 ChampionRowView(vm: vm, champ: champion)
             }
         }

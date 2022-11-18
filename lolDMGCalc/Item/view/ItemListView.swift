@@ -16,7 +16,7 @@ struct ItemListView: View {
     var body: some View {
         List {
             Button {
-                vm.selecteditemList[numberOfButton] = nil
+                vm.selectedItemList[numberOfButton] = nil
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 HStack {
@@ -27,9 +27,9 @@ struct ItemListView: View {
             }
 
             
-            ForEach(vm.itemList) { item in
+            ForEach(vm.items) { item in
                 Button {
-                    vm.selecteditemList[numberOfButton] = item
+                    vm.selectedItemList[numberOfButton] = item
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     HStack {

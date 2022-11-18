@@ -7,26 +7,37 @@
 
 import Foundation
 
-enum LevelKind: String, CaseIterable {
-    case q, w, e, r
+struct AbilityLevel {
+    
+    var levels: [Level] = [Level(description: "Q"), Level(description: "W"), Level(description: "E"), Level(description: "R")]
+    
+    mutating public func newValue(_ value: Int, for description: String) {
+        if let index = getLevelIndex(description) {
+            levels[index].newValue(value)
+        }
+    }
+    
+    func isAvaliable(_ description: String) -> Bool {
+        if let index = getLevelIndex(description) {
+            return levels[index].available
+        }
+        return false
+    }
+    
+    private func getLevelIndex(_ description: String) -> Int? {
+        return levels.firstIndex(where: {$0.description == description})
+    }
 }
 
-struct AbilityLevel {
-    var qLevel: Int = 0
-    var wLevel: Int = 0
-    var eLevel: Int = 0
-    var rLevel: Int = 0
+struct Level {
+    let description: String
+    var value: Int = 0
     
-    mutating public func newValue(_ value: Int, for kind: LevelKind) {
-        switch kind {
-        case .q:
-            qLevel = value
-        case .w:
-            wLevel = value
-        case .e:
-            eLevel = value
-        case .r:
-            rLevel = value
-        }
+    var available: Bool {
+        value > 0
+    }
+    
+    public mutating func newValue(_ value: Int) {
+        self.value = value
     }
 }

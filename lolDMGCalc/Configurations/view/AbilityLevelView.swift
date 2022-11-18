@@ -10,13 +10,13 @@ import SwiftUI
 struct AbilityLevelView: View {
     @ObservedObject var vm: ViewModel
     
-    let levelKind: LevelKind
+    let description: String
     
     @State private var value: Int = 0
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(levelKind.rawValue) Level:")
+            Text("\(description) Level:")
                 .frame(minWidth: 65)
             Picker("Pick", selection: $value) {
                 ForEach(0 ..< 6) { i in
@@ -25,7 +25,7 @@ struct AbilityLevelView: View {
             }
             .pickerStyle(.segmented)
             .onChange(of: value) { newValue in
-                vm.abilityLevel.newValue(newValue, for: levelKind)
+                vm.abilityLevel.newValue(newValue, for: description)
             }
         }
     }
@@ -33,6 +33,6 @@ struct AbilityLevelView: View {
 
 struct AbilityLevelView_Previews: PreviewProvider {
     static var previews: some View {
-        AbilityLevelView(vm: ViewModel(), levelKind: .q)
+        AbilityLevelView(vm: ViewModel(), description: "Q")
     }
 }

@@ -31,6 +31,6 @@ struct SelectedAbilitiesView: View {
 
 struct SelectedAbilitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedAbilitiesView(vm: Mock.vm, selectedActionNumber: 0, selectedAction: Mock.action6)
+        SelectedAbilitiesView(vm: Mock.vm, selectedActionNumber: 0, selectedAction: ActionData.autoAttack)
     }
 }

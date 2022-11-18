@@ -24,7 +24,7 @@ struct ChooseItemButtonsView: View {
                     NavigationLink {
                         ItemListView(vm: vm, numberOfButton: i)
                     } label: {
-                        if let item = vm.selecteditemList[i] {
+                        if let item = vm.selectedItemList[i] {
                             AsyncImageView(url: item.item_icon, size: 40)
                         } else {
                             EmptyImageView(size: 40)

@@ -14,10 +14,15 @@ struct ChampionConfigView: View {
         VStack {
             ChampionLevelSliderView(vm: vm)
                 .padding(.horizontal)
-            ForEach(LevelKind.allCases, id: \.self) { level in
-                Divider()
-                AbilityLevelView(vm: vm, levelKind: level)
-            }
+            
+            Divider()
+            AbilityLevelView(vm: vm, description: "Q")
+            Divider()
+            AbilityLevelView(vm: vm, description: "W")
+            Divider()
+            AbilityLevelView(vm: vm, description: "E")
+            Divider()
+            AbilityLevelView(vm: vm, description: "R")
 
             Spacer()
         }
