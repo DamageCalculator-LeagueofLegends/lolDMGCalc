@@ -37,11 +37,11 @@ class Mock {
     }
 
     static var item1: ItemModel {
-        ItemModel(item_id: 6655, item_name: "Luden's Tempest", item_icon: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6655_mage_t4_ludenstempest.png", item_tier: 3, is_legendary: false, is_mythic: true, item_no_effects: false, item_shop_price_total: 0, item_shop_price_combined: 0, item_shop_price_sell: 0, item_ability_power_flat: 80, item_armor_flat: 0, item_armor_penetration_percentage: 0, item_attack_damage_flat: 0, item_attack_speed_flat: 0, item_critical_strike_chance_percentage: 0, item_gold_per_10_flat: 0, item_heal_and_shield_power_flat: 0, item_health_flat: 0, item_health_regen_flat: 0, item_lethality_flat: 0, item_lifesteal_percentage: 0, item_magic_penetration_flat: 6, item_magic_penetration_percentage: 0, item_magic_resistance_flat: 0, item_mana_flat: 600, item_mana_regen_flat: 0, item_movespeed_flat: 0, item_ability_haste_flat: 20, item_omnivamp_percentage: 0, item_tenacity_flat: 0, item_slow_resistance_flat: 0, item_physical_vamp: 0, mythic_armor_flat: 0, mythic_armor_penetration_percentage: 0, mythic_ability_power_flat: 0, mythic_attack_damage_flat: 0, mythic_attack_speed_flat: 0, mythic_heal_and_shield_power_flat: 0, mythic_health_flat: 0, mythic_lethality_flat: 0, mythic_magic_penetration_flat: 5, mythic_magic_penetration_percentage: 0, mythic_magic_resistance_flat: 0, mythic_ability_haste_flat: 0, mythic_omnivamp_flat_percentage: 0, mythic_tenacity_flat: 0, mythic_slow_resistance: 0, has_active: false)
+        ItemModel(item_id: 6655, item_name: "Luden's Tempest", item_icon: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6655_mage_t4_ludenstempest.png", item_tier: 3, is_legendary: false, is_mythic: true, item_no_effects: false, item_shop_price_total: 0, item_shop_price_combined: 0, item_shop_price_sell: 0, item_ability_power_flat: 80, item_armor_flat: 0, item_armor_penetration_percentage: 0, item_attack_damage_flat: 0, item_attack_speed_flat: 0, item_critical_strike_chance_percentage: 0, item_gold_per_10_flat: 0, item_heal_and_shield_power_flat: 0, item_health_flat: 0, item_health_regen_flat: 0, item_lethality_flat: 0, item_lifesteal_percentage: 0, item_magic_penetration_flat: 6, item_magic_penetration_percentage: 0, item_magic_resistance_flat: 0, item_mana_flat: 600, item_mana_regen_flat: 0, item_movespeed_flat: 0, item_ability_haste_flat: 20, item_omnivamp_percentage: 0, item_tenacity_flat: 0, item_slow_resistance_flat: 0, item_physical_vamp: 0, mythic_armor_flat: 0, mythic_armor_penetration_percentage: 0, mythic_ability_power_flat: 0, mythic_attack_damage_flat: 0, mythic_attack_speed_flat: 0, mythic_heal_and_shield_power_flat: 0, mythic_health_flat: 0, mythic_lethality_flat: 0, mythic_magic_penetration_flat: 5, mythic_magic_penetration_percentage: 0, mythic_magic_resistance_flat: 0, mythic_ability_haste_flat: 0, mythic_omnivamp_flat_percentage: 0, mythic_tenacity_flat: 0, mythic_slow_resistance: 0, has_active: false, is_unique: true)
     }
 
     static var item2: ItemModel {
-        ItemModel(item_id: 6653, item_name: "Liandry's Anguish", item_icon: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6653_mage_t4_liandrysanguish.png", item_tier: 3, is_legendary: false, is_mythic: true, item_no_effects: false, item_shop_price_total: 0, item_shop_price_combined: 0, item_shop_price_sell: 0, item_ability_power_flat: 80, item_armor_flat: 0, item_armor_penetration_percentage: 0, item_attack_damage_flat: 0, item_attack_speed_flat: 0, item_critical_strike_chance_percentage: 0, item_gold_per_10_flat: 0, item_heal_and_shield_power_flat: 0, item_health_flat: 0, item_health_regen_flat: 0, item_lethality_flat: 0, item_lifesteal_percentage: 0, item_magic_penetration_flat: 0, item_magic_penetration_percentage: 0, item_magic_resistance_flat: 0, item_mana_flat: 600, item_mana_regen_flat: 0, item_movespeed_flat: 0, item_ability_haste_flat: 20, item_omnivamp_percentage: 0, item_tenacity_flat: 0, item_slow_resistance_flat: 0, item_physical_vamp: 0, mythic_armor_flat: 0, mythic_armor_penetration_percentage: 0, mythic_ability_power_flat: 0, mythic_attack_damage_flat: 0, mythic_attack_speed_flat: 0, mythic_heal_and_shield_power_flat: 0, mythic_health_flat: 0, mythic_lethality_flat: 0, mythic_magic_penetration_flat: 0, mythic_magic_penetration_percentage: 0, mythic_magic_resistance_flat: 0, mythic_ability_haste_flat: 5, mythic_omnivamp_flat_percentage: 0, mythic_tenacity_flat: 0, mythic_slow_resistance: 0, has_active: false)
+        ItemModel(item_id: 6653, item_name: "Liandry's Anguish", item_icon: "https://raw.communitydragon.org/12.19/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6653_mage_t4_liandrysanguish.png", item_tier: 3, is_legendary: false, is_mythic: true, item_no_effects: false, item_shop_price_total: 0, item_shop_price_combined: 0, item_shop_price_sell: 0, item_ability_power_flat: 80, item_armor_flat: 0, item_armor_penetration_percentage: 0, item_attack_damage_flat: 0, item_attack_speed_flat: 0, item_critical_strike_chance_percentage: 0, item_gold_per_10_flat: 0, item_heal_and_shield_power_flat: 0, item_health_flat: 0, item_health_regen_flat: 0, item_lethality_flat: 0, item_lifesteal_percentage: 0, item_magic_penetration_flat: 0, item_magic_penetration_percentage: 0, item_magic_resistance_flat: 0, item_mana_flat: 600, item_mana_regen_flat: 0, item_movespeed_flat: 0, item_ability_haste_flat: 20, item_omnivamp_percentage: 0, item_tenacity_flat: 0, item_slow_resistance_flat: 0, item_physical_vamp: 0, mythic_armor_flat: 0, mythic_armor_penetration_percentage: 0, mythic_ability_power_flat: 0, mythic_attack_damage_flat: 0, mythic_attack_speed_flat: 0, mythic_heal_and_shield_power_flat: 0, mythic_health_flat: 0, mythic_lethality_flat: 0, mythic_magic_penetration_flat: 0, mythic_magic_penetration_percentage: 0, mythic_magic_resistance_flat: 0, mythic_ability_haste_flat: 5, mythic_omnivamp_flat_percentage: 0, mythic_tenacity_flat: 0, mythic_slow_resistance: 0, has_active: false, is_unique: true)
     }
 
     // MARK: ACTIONS ---------------------------------------------
@@ -51,22 +51,22 @@ class Mock {
     }
 
     static var action1: Action {
-        Action(name: "Auto Attack", available: false, chosen: false)
+        Action(name: "AA", available: true, chosen: false)
     }
 
     static var action2: Action {
-        Action(name: "Q Ability", available: true, chosen: false)
+        Action(name: "Q", available: true, chosen: false)
     }
 
     static var action3: Action {
-        Action(name: "W Ability", available: true, chosen: false)
+        Action(name: "W", available: true, chosen: false)
     }
 
     static var action4: Action {
-        Action(name: "E Ability", available: true, chosen: false)
+        Action(name: "E", available: true, chosen: false)
     }
 
     static var action5: Action {
-        Action(name: "R Ability", available: true, chosen: false)
+        Action(name: "R", available: true, chosen: false)
     }
 }

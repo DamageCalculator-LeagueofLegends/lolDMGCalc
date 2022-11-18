@@ -14,26 +14,46 @@ struct ContentView: View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
                 ChooseChampionButtonView(vm: vm)
-                if vm.selectedChampion != nil {
-                    ChooseItemButtonsView(vm: vm)
-                }
+                ChooseItemButtonsView(vm: vm)
+//                if vm.selectedChampion != nil {
+//                    ChooseItemButtonsView(vm: vm)
+//                }
             }
             .padding(.top, 10)
-            if vm.selectedChampion != nil {
+            ScrollViewReader { value in
                 ScrollView {
                     ChampionConfigView(vm: vm)
                     Divider()
                     ChooseDummyStatsView(vm: vm)
                     Divider()
-                    AddNewAbility(vm: vm)
+                    AvailableAbilitiesView(vm: vm)
                     AbilityListView(vm: vm)
+                    Text("")
+                        .id(10)
                 }
-                .padding(20)
-                //        .background(Color("White"))
-                .cornerRadius(10)
-                .padding(20)
-                .background(Material.ultraThin)
+                .onChange(of: vm.selectedActions.count) { _ in
+                        withAnimation {
+                            value.scrollTo(10)
+                    }
+                }
             }
+            .padding([.horizontal, .top])
+            .background(Color("White"))
+            .cornerRadius(10)
+
+//            if vm.selectedChampion != nil {
+//                ScrollView {
+//                    ChampionConfigView(vm: vm)
+//                    Divider()
+//                    ChooseDummyStatsView(vm: vm)
+//                    Divider()
+//                    AbilityListView(vm: vm)
+//                    AddNewAbility(vm: vm)
+//                }
+//                .padding([.horizontal, .top])
+//            .background(Color("White"))
+//            .cornerRadius(10)
+//            }
         }
         .alert(vm.error?.localizedDescription ?? "", isPresented: $vm.showingError) {
             Button("reload") {
@@ -43,6 +63,9 @@ struct ContentView: View {
                 }
             }
         }
+        .padding(20)
+        .background(Material.ultraThin)
+
         .environmentObject(vm)
         .navigationTitle("Dmg Calc")
         .navigationBarTitleDisplayMode(.inline)

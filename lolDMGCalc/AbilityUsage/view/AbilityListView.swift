@@ -12,11 +12,10 @@ struct AbilityListView: View {
     var body: some View {
         VStack {
             ForEach(vm.selectedActions) { abc in
-                if abc.chosen {
-                    Text(abc.name)
-                }
+                Text(abc.name)
             }
         }
+        .padding(.vertical)
     }
 }
 

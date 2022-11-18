@@ -21,7 +21,7 @@ struct ChooseDummyStatsView: View {
                 }
                 VStack(alignment: .leading) {
                     Text("Armor")
-                    TextField("Health", value: $vm.dummy.armor, format: .number)
+                    TextField("Armor", value: $vm.dummy.armor, format: .number)
                         .keyboardType(.numberPad)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 100)
@@ -29,7 +29,7 @@ struct ChooseDummyStatsView: View {
                 
                 VStack(alignment: .leading) {
                     Text("Magic Res")
-                    TextField("Health", value: $vm.dummy.magicResistance, format: .number)
+                    TextField("Magic Res", value: $vm.dummy.magicResistance, format: .number)
                         .keyboardType(.numberPad)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 100)

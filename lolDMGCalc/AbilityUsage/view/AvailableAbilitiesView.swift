@@ -9,20 +9,24 @@ import SwiftUI
 
 struct AvailableAbilitiesView: View {
     @ObservedObject var vm: ViewModel
-    @State var tempAction: Action = Action(name: "", available: false, chosen: false)
 
     var body: some View {
-        VStack {
-            ForEach(vm.availableActions) { action in
-                if action.available {
-                    Button {
-                        self.tempAction = action
-                        self.tempAction.chosen = true
-                        vm.selectedActions.append(self.tempAction)
-                    } label: {
-                        Text(action.name)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(vm.availableActions) { action in
+                    if action.available {
+                        Button {
+                            vm.selectedActions.append(action)
+                        } label: {
+                            Text(action.name)
+                                .font(.system(size: 23))
+                                .padding(4)
+                                .frame(width:55)
+                                .background(.gray.opacity(0.3))
+                                .cornerRadius(6)
+                        }
+                        
                     }
-                    .buttonStyle(.bordered)
                 }
             }
         }
@@ -31,6 +35,8 @@ struct AvailableAbilitiesView: View {
 
 struct AvailableAbilitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        AvailableAbilitiesView(vm: Mock.vm, tempAction: Mock.action1)
+        VStack {
+            AvailableAbilitiesView(vm: Mock.vm)
+        }
     }
 }

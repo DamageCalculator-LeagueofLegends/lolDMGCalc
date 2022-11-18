@@ -70,4 +70,5 @@ struct ItemModel: Identifiable, Codable {
     var mythic_slow_resistance: Double
     
     var has_active: Bool
+    var is_unique: Bool
 }
