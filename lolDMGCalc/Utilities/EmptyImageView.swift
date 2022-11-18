@@ -12,12 +12,20 @@ struct EmptyImageView: View {
     var clickable: Bool = true
 
     var body: some View {
-        Image(systemName: clickable ? "circle" : "")
-            .font(.system(size: size/1.5))
-            .foregroundColor(.accentColor)
-            .frame(width: size, height: size)
-            .background(.gray.opacity(0.4))
-            .cornerRadius(10)
+        if clickable {
+            Image(systemName: "circle")
+                .font(.system(size: size/1.5))
+                .foregroundColor(.accentColor)
+                .frame(width: size, height: size)
+                .background(.gray.opacity(0.4))
+                .cornerRadius(10)
+        } else {
+            Rectangle()
+                .frame(width: size, height: size)
+                .foregroundColor(.gray.opacity(0.4))
+                .cornerRadius(10)
+        }
+        
     }
 }
 

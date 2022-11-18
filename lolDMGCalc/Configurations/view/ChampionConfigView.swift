@@ -16,13 +16,13 @@ struct ChampionConfigView: View {
                 .padding(.horizontal)
             
             Divider()
-            AbilityLevelView(vm: vm, description: "Q")
+            AbilityLevelView(vm: vm, description: "Q",lower: vm.selectedChampion?.q_bounds.lower ?? 0, upper: vm.selectedChampion?.q_bounds.upper ?? 5 )
             Divider()
-            AbilityLevelView(vm: vm, description: "W")
+            AbilityLevelView(vm: vm, description: "W", lower: vm.selectedChampion?.w_bounds.lower ?? 0, upper: vm.selectedChampion?.w_bounds.upper ?? 5 )
             Divider()
-            AbilityLevelView(vm: vm, description: "E")
+            AbilityLevelView(vm: vm, description: "E" ,lower: vm.selectedChampion?.e_bounds.lower ?? 0, upper: vm.selectedChampion?.e_bounds.upper ?? 5 )
             Divider()
-            AbilityLevelView(vm: vm, description: "R")
+            AbilityLevelView(vm: vm, description: "R", lower: vm.selectedChampion?.r_bounds.lower ?? 0, upper: vm.selectedChampion?.r_bounds.upper ?? 3 )
 
             Spacer()
         }

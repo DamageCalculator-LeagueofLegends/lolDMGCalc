@@ -23,7 +23,6 @@ struct AbilityListView: View {
                 }
             }
         }
-        .padding(.vertical)
     }
 }
 

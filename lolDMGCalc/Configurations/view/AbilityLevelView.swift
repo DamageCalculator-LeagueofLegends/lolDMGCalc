@@ -12,16 +12,22 @@ struct AbilityLevelView: View {
     
     let description: String
     
-    @State private var value: Int = 0
+    @State var value: Int = 0
+    
+    let lower: Int
+    let upper: Int
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(description) Level:")
                 .frame(minWidth: 65)
             Picker("Pick", selection: $value) {
-                ForEach(0 ..< 6) { i in
+                ForEach(lower..<upper+1, id: \.self) { i in
                     Text("\(i)").tag(i)
                 }
+            }
+            .onAppear(){
+                value = lower
             }
             .pickerStyle(.segmented)
             .onChange(of: value) { newValue in
@@ -33,6 +39,6 @@ struct AbilityLevelView: View {
 
 struct AbilityLevelView_Previews: PreviewProvider {
     static var previews: some View {
-        AbilityLevelView(vm: ViewModel(), description: "Q")
+        AbilityLevelView(vm: ViewModel(), description: "Q", value: 0, lower: 0, upper: 5)
     }
 }

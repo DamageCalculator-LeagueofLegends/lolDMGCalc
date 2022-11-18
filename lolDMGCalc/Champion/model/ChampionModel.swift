@@ -96,4 +96,17 @@ struct ChampionModel: Identifiable, Codable {
     var mythic_magic_pen_perc: Double
     var mythic_tenacity: Double
     var mythic_slow_resistance: Double
+    
+    let q_bounds: Bounds
+    let w_bounds: Bounds
+    let e_bounds: Bounds
+    let r_bounds: Bounds
+    
+    var test = 2
+}
+
+
+struct Bounds: Codable {
+    let lower: Int
+    let upper: Int
 }
