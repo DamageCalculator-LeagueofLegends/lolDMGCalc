@@ -19,15 +19,12 @@ class ViewModel: ObservableObject {
     @Published var dummy: Dummy = Dummy(health: 1000, armor: 0, magicResistance: 0)
 
     @Published var championLevel: Double = 1
-    @Published var abilityLevel: AbilityLevel = .init() {
-        didSet {
-            
-            print("test")
-        }
-    }
+    @Published var abilityLevel: AbilityLevel = .init()
     
     @Published var error: Error?
     @Published var showingError: Bool = false
+    
+    @Published var output: OutputModel = OutputModel(totalDamage: 0, trueDamage: 1, physicalDamage: 2, magicDamage: 3)
 
     private var apiClient: APIClient = .init()
     private var championService: ChampionServiceProtocol

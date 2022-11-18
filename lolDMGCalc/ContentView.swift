@@ -20,6 +20,7 @@ struct ContentView: View {
 //                }
             }
             .padding(.top, 10)
+            OutputView(vm: vm)
             ScrollView {
                 ChampionConfigView(vm: vm)
                 Divider()
@@ -54,7 +55,7 @@ struct ContentView: View {
                 }
             }
         }
-        .padding(20)
+        .padding(10)
         .background(Material.ultraThin)
 
         .environmentObject(vm)

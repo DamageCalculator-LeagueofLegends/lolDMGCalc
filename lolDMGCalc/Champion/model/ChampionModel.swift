@@ -102,7 +102,10 @@ struct ChampionModel: Identifiable, Codable {
     let e_bounds: Bounds
     let r_bounds: Bounds
     
-    var test = 2
+    var q_name: String
+    var w_name: String
+    var e_name: String
+    var r_name: String
 }
 
 
