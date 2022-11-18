@@ -25,7 +25,17 @@ struct AvailableAbilitiesView: View {
                 ForEach(vm.selectableAbilities) { action in
 
                     Button {
-                        vm.selectedActions.append(action)
+                        var tempAct: Action = action
+                        if action.name == "Q" {
+                            tempAct.fullName = vm.selectedChampion?.q_name ?? action.fullName
+                        } else if action.name == "W" {
+                            tempAct.fullName = vm.selectedChampion?.w_name ?? action.fullName
+                        } else if action.name == "E" {
+                            tempAct.fullName = vm.selectedChampion?.e_name ?? action.fullName
+                        } else if action.name == "R" {
+                            tempAct.fullName = vm.selectedChampion?.r_name ?? action.fullName
+                        }
+                        vm.selectedActions.append(tempAct)
                     } label: {
                         Text(action.name)
                             .font(.system(size: 23))

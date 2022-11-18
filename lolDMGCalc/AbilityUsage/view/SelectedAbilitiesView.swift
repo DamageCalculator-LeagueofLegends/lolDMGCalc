@@ -21,7 +21,7 @@ struct SelectedAbilitiesView: View {
                 Image(systemName: "minus.circle")
             }
             Spacer()
-            Text(String(format: "%.2f", selectedAction.damage))
+            Text(String(format: "%.1f", selectedAction.damage))
         }
         .padding(5)
         .background(.opacity(0.2))

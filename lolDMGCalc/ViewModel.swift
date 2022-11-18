@@ -19,7 +19,12 @@ class ViewModel: ObservableObject {
     @Published var dummy: Dummy = Dummy(health: 1000, armor: 0, magicResistance: 0)
 
     @Published var championLevel: Double = 1
-    @Published var abilityLevel: AbilityLevel = .init()
+    @Published var abilityLevel: AbilityLevel = .init() {
+        didSet {
+            print("test")
+            
+        }
+    }
     
     @Published var error: Error?
     @Published var showingError: Bool = false
