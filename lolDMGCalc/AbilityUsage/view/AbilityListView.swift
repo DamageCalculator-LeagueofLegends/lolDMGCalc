@@ -9,10 +9,18 @@ import SwiftUI
 
 struct AbilityListView: View {
     @ObservedObject var vm: ViewModel
+    
     var body: some View {
         VStack {
-            ForEach(0..<vm.selectedActions.count, id: \.self) { actionNumber in
-                SelectedAbilitiesView(vm: vm, selectedActionNumber: actionNumber, selectedAction: vm.selectedActions[actionNumber])
+            ScrollViewReader { value in
+                ForEach(0 ..< vm.selectedActions.count, id: \.self) { actionNumber in
+                    SelectedAbilitiesView(vm: vm, selectedActionNumber: actionNumber, selectedAction: vm.selectedActions[actionNumber])
+                }
+                .onChange(of: vm.selectedActions.count) { _ in
+                    withAnimation {
+                        value.scrollTo(vm.selectedActions.count - 1)
+                    }
+                }
             }
         }
         .padding(.vertical)

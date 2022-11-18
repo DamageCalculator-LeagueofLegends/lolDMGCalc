@@ -14,9 +14,8 @@ struct AvailableAbilitiesView: View {
     var body: some View {
         VStack {
             basicAbilities
-            if hasActiveItems {
-                itemActives
-            }
+            itemActives
+            
         }
     }
 
@@ -53,9 +52,6 @@ struct AvailableAbilitiesView: View {
                             .frame(width: 55)
                             .background(.gray.opacity(0.3))
                             .cornerRadius(6)
-                    }
-                    .onAppear {
-                        hasActiveItems = true
                     }
                 }
             }

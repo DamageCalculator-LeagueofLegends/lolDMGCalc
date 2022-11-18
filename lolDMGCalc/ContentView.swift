@@ -20,24 +20,15 @@ struct ContentView: View {
 //                }
             }
             .padding(.top, 10)
-            ScrollViewReader { value in
-                ScrollView {
-                    ChampionConfigView(vm: vm)
-                    Divider()
-                    ChooseDummyStatsView(vm: vm)
-                    Divider()
-                    AvailableAbilitiesView(vm: vm)
-                    AbilityListView(vm: vm)
-                    Text("")
-                        .id(10)
-                }
-                .onChange(of: vm.selectedActions.count) { _ in
-                        withAnimation {
-                            value.scrollTo(10)
-                    }
-                }
+            ScrollView {
+                ChampionConfigView(vm: vm)
+                Divider()
+                ChooseDummyStatsView(vm: vm)
+                Divider()
+                AvailableAbilitiesView(vm: vm)
+                AbilityListView(vm: vm)
             }
-            .padding([.horizontal, .top])
+            .padding()
             .background(Color("White"))
             .cornerRadius(10)
 
