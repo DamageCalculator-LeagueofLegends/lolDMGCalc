@@ -11,8 +11,8 @@ struct AbilityListView: View {
     @ObservedObject var vm: ViewModel
     var body: some View {
         VStack {
-            ForEach(vm.selectedActions) { abc in
-                Text(abc.name)
+            ForEach(0..<vm.selectedActions.count, id: \.self) { actionNumber in
+                SelectedAbilitiesView(vm: vm, selectedActionNumber: actionNumber, selectedAction: vm.selectedActions[actionNumber])
             }
         }
         .padding(.vertical)

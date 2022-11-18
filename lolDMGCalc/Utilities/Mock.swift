@@ -47,26 +47,30 @@ class Mock {
     // MARK: ACTIONS ---------------------------------------------
 
     static var actions: [Action] {
-        [action1, action2, action3, action4, action5]
+        [action1, action2, action3, action4, action5, action6]
     }
 
     static var action1: Action {
-        Action(name: "AA", available: true, chosen: false)
+        Action(name: "AA", fullName: "Auto Attack", available: true, damage: 0, itemActive: false)
     }
 
     static var action2: Action {
-        Action(name: "Q", available: true, chosen: false)
+        Action(name: "Q", fullName: "Q Ability", available: true, damage: 0, itemActive: false)
     }
 
     static var action3: Action {
-        Action(name: "W", available: true, chosen: false)
+        Action(name: "W", fullName: "W Ability", available: true, damage: 0, itemActive: false)
     }
 
     static var action4: Action {
-        Action(name: "E", available: true, chosen: false)
+        Action(name: "E", fullName: "E Ability", available: true, damage: 0, itemActive: false)
     }
 
     static var action5: Action {
-        Action(name: "R", available: true, chosen: false)
+        Action(name: "R", fullName: "R Ability", available: true, damage: 0, itemActive: false)
+    }
+
+    static var action6: Action {
+        Action(name: "IA1", fullName: "Item Active 1", available: false, damage: 9999, itemActive: true)
     }
 }

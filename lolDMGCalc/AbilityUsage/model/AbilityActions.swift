@@ -11,6 +11,8 @@ struct Action: Identifiable, Hashable {
     var id: UUID = UUID()
     
     var name: String
+    var fullName: String
     var available: Bool
-    var chosen: Bool
+    var damage: Double
+    var itemActive: Bool
 }

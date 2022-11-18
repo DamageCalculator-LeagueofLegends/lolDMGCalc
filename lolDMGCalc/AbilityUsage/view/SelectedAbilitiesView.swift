@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct SelectedAbilitiesView: View {
+    @ObservedObject var vm: ViewModel
+    var selectedActionNumber: Int
+    var selectedAction: Action
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(selectedAction.fullName)
+                .frame(width: 150, alignment: .leading)
+            Button {
+                vm.selectedActions.remove(at: selectedActionNumber)
+            } label: {
+                Image(systemName: "minus.circle")
+            }
+            Spacer()
+            Text(String(format: "%.2f", selectedAction.damage))
+        }
+        .padding(5)
+        .background(.opacity(0.2))
+        .cornerRadius(7)
     }
 }
 
 struct SelectedAbilitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectedAbilitiesView()
+        SelectedAbilitiesView(vm: Mock.vm, selectedActionNumber: 0, selectedAction: Mock.action6)
     }
 }
