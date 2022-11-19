@@ -21,7 +21,7 @@ class ViewModel: ObservableObject {
     @Published var championLevel: Double = 1
     @Published var abilityLevel: AbilityLevel = .init() {
         didSet {
-            print("test")
+            print("test \(abilityLevel.levels)")
             
         }
     }

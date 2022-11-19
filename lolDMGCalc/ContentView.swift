@@ -55,11 +55,18 @@ struct ContentView: View {
                 }
             }
         }
+        .toolbar {
+            Button {
+                
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+            }
+
+        }
         .padding(10)
         .background(Material.ultraThin)
-
         .environmentObject(vm)
-        .navigationTitle("Dmg Calc")
+        .navigationTitle("Dmg Calculator")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
