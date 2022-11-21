@@ -31,20 +31,7 @@ struct AbilityLevelView: View {
             }
             .pickerStyle(.segmented)
             .onChange(of: value) { newValue in
-                vm.selectedActions = vm.selectedActions.filter({$0.name != description})
-//                var tempNum: [Int] = []
-//                if value == 0 {
-//                    for index in vm.selectedActions.indices {
-//                        if vm.selectedActions[index].name == description {
-//
-//                            tempNum.append(index)
-//                        }
-//                    }
-//                    for i in tempNum {
-//                        vm.selectedActions.remove(at: i)
-//                    }
-//                }
-                vm.abilityLevel.newValue(newValue, for: description)
+                vm.newLevel(newValue, description: description)
             }
         }
     }

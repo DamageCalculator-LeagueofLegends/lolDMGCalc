@@ -106,6 +106,8 @@ struct ChampionModel: Identifiable, Codable {
     var w_name: String
     var e_name: String
     var r_name: String
+    
+    var enemy_health: Double
 }
 
 

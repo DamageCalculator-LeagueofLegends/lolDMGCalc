@@ -15,14 +15,17 @@ struct ChampionConfigView: View {
             ChampionLevelSliderView(vm: vm)
                 .padding(.horizontal)
             
-            Divider()
-            AbilityLevelView(vm: vm, description: "Q",lower: vm.selectedChampion?.q_bounds.lower ?? 0, upper: vm.selectedChampion?.q_bounds.upper ?? 5 )
-            Divider()
-            AbilityLevelView(vm: vm, description: "W", lower: vm.selectedChampion?.w_bounds.lower ?? 0, upper: vm.selectedChampion?.w_bounds.upper ?? 5 )
-            Divider()
-            AbilityLevelView(vm: vm, description: "E" ,lower: vm.selectedChampion?.e_bounds.lower ?? 0, upper: vm.selectedChampion?.e_bounds.upper ?? 5 )
-            Divider()
-            AbilityLevelView(vm: vm, description: "R", lower: vm.selectedChampion?.r_bounds.lower ?? 0, upper: vm.selectedChampion?.r_bounds.upper ?? 3 )
+            if let champion = vm.selectedChampion {
+                
+                Divider()
+                AbilityLevelView(vm: vm, description: "Q", lower: champion.q_bounds.lower, upper: champion.q_bounds.upper)
+                Divider()
+                AbilityLevelView(vm: vm, description: "W", lower: champion.w_bounds.lower, upper: champion.w_bounds.upper)
+                Divider()
+                AbilityLevelView(vm: vm, description: "E", lower: champion.e_bounds.lower, upper: champion.e_bounds.upper)
+                Divider()
+                AbilityLevelView(vm: vm, description: "R", lower: champion.r_bounds.lower, upper: champion.r_bounds.upper)
+            }
 
             Spacer()
         }

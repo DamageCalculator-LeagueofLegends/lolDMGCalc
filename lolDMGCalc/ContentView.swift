@@ -14,25 +14,27 @@ struct ContentView: View {
         VStack(spacing: 20) {
             HStack(alignment: .top) {
                 ChooseChampionButtonView(vm: vm)
-                ChooseItemButtonsView(vm: vm)
-//                if vm.selectedChampion != nil {
-//                    ChooseItemButtonsView(vm: vm)
-//                }
+                if vm.selectedChampion != nil {
+                    ChooseItemButtonsView(vm: vm)
+                }
             }
             .padding(.top, 10)
-            OutputView(vm: vm)
-            ScrollView {
-                ChampionConfigView(vm: vm)
-                Divider()
-                ChooseDummyStatsView(vm: vm)
-                Divider()
-                AvailableAbilitiesView(vm: vm)
-                AbilityListView(vm: vm)
+            if vm.selectedChampion != nil {
+                OutputView(vm: vm)
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        ChampionConfigView(vm: vm)
+                        Divider()
+                        ChooseDummyStatsView(vm: vm)
+                        Divider()
+                        AvailableAbilitiesView(vm: vm)
+                        AbilityListView(vm: vm)
+                    }
+                    .padding()
+                }
+                .background(Color("White"))
+                .cornerRadius(10)
             }
-            .padding()
-            .background(Color("White"))
-            .cornerRadius(10)
-
 //            if vm.selectedChampion != nil {
 //                ScrollView {
 //                    ChampionConfigView(vm: vm)
@@ -57,7 +59,7 @@ struct ContentView: View {
         }
         .toolbar {
             Button {
-                
+                vm.sendData()
             } label: {
                 Image(systemName: "square.and.arrow.up")
             }

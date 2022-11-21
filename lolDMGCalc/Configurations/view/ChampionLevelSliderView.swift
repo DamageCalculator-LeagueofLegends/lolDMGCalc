@@ -13,7 +13,7 @@ struct ChampionLevelSliderView: View {
         VStack {
             Text("Champion Level:")
             HStack {
-                Slider(value: $vm.championLevel, in: 1 ... 18, step: 1) {
+                Slider(value: $vm.championLevel, in: 1...18, step: 1) {
                     Text("Level")
                 }
 

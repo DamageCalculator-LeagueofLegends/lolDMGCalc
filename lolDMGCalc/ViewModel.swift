@@ -9,32 +9,27 @@ import Foundation
 
 class ViewModel: ObservableObject {
     @Published var champions: [ChampionModel] = []
-    @Published var selectedChampion: ChampionModel? = nil
-    
+    @Published var selectedChampion: ChampionModel?
+
     @Published var items: [ItemModel] = []
     @Published var selectedItemList: [ItemModel?] = [nil, nil, nil, nil, nil, nil]
-    
+
     @Published var selectedActions: [Action] = []
-    
-    @Published var dummy: Dummy = Dummy(health: 1000, armor: 0, magicResistance: 0)
+
+    @Published var dummy: Dummy = .init(health: 1000, armor: 0, magicResistance: 0)
 
     @Published var championLevel: Double = 1
-    @Published var abilityLevel: AbilityLevel = .init() {
-        didSet {
-            print("test \(abilityLevel.levels)")
-            
-        }
-    }
-    
+    @Published var abilityLevel: AbilityLevel = .init()
+
     @Published var error: Error?
     @Published var showingError: Bool = false
-    
-    @Published var output: OutputModel = OutputModel(totalDamage: 0, trueDamage: 1, physicalDamage: 2, magicDamage: 3)
+
+    @Published var output: OutputModel = .init(totalDamage: 0, trueDamage: 1, physicalDamage: 2, magicDamage: 3)
 
     private var apiClient: APIClient = .init()
     private var championService: ChampionServiceProtocol
     private var itemService: ItemServiceProtocol
-    
+
     var selectableAbilities: [Action] {
         var tempArray: [Action] = [ActionData.autoAttack]
         for ability in ActionData.abilities {
@@ -42,9 +37,10 @@ class ViewModel: ObservableObject {
                 tempArray.append(ability)
             }
         }
-        
+
         return tempArray
     }
+
     var selectableAcitveItems: [Action] {
         var tempArray: [Action] = []
         for itemIndex in selectedItemList.indices {
@@ -56,9 +52,10 @@ class ViewModel: ObservableObject {
         return tempArray
     }
 
-    init(championService: ChampionServiceProtocol = ChampionService(), itemService: ItemServiceProtocol = ItemService()) {
+    init(championService: ChampionServiceProtocol = ChampionService(), itemService: ItemServiceProtocol = ItemService(), selectedChampion: ChampionModel? = nil) {
         self.itemService = itemService
         self.championService = championService
+        self.selectedChampion = selectedChampion
     }
 
     public func fetchChampions() async {
@@ -90,4 +87,47 @@ class ViewModel: ObservableObject {
             }
         }
     }
+
+    public func newLevel(_ newValue: Int, description: String) {
+        selectedActions = selectedActions.filter { $0.name != description }
+        abilityLevel.newValue(newValue, for: description)
+    }
+
+    public func sendData() {
+//        var json_encoder = JSONEncoder()
+        let dataSet = BackendData(
+            championID: selectedChampion?.champion_id ?? 0,
+            listOfItemIDs: selectedItemList.map { $0?.item_id ?? 0 },
+            listOfActionNames: selectedActions.map { $0.name },
+            championLevel: Int(championLevel),
+            abilityLevel: abilityLevel.levels.map { $0.value },
+            dummyStats: [dummy.health, dummy.armor, dummy.magicResistance]
+        )
+        Task{
+            do {
+                guard let url = URL(string: "http://127.0.0.1:5000/sendData") else {throw URLError(.badURL)}
+                let data: BackendData = try await apiClient.post(url, payload: dataSet)
+                print(data)
+            } catch {
+                print(error)
+            }
+        }
+        
+//        do {
+//            let encoded_data = try json_encoder.encode(dataSet)
+//            print(String(data: encoded_data, encoding: .utf8)!)
+//        } catch {
+//            print("eroor")
+//        }
+        
+    }
+}
+
+struct BackendData: Codable {
+    var championID: Int
+    var listOfItemIDs: [Int?]
+    var listOfActionNames: [String]
+    var championLevel: Int
+    var abilityLevel: [Int]
+    var dummyStats: [Int]
 }
