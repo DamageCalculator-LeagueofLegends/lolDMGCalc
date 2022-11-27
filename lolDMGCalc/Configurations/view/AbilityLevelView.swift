@@ -22,7 +22,7 @@ struct AbilityLevelView: View {
             Text("\(description) Level:")
                 .frame(minWidth: 65)
             Picker("Pick", selection: $value) {
-                ForEach(lower ..< upper + 1, id: \.self) { i in
+                ForEach(lower ..< upper + 2, id: \.self) { i in
                     Text("\(i)").tag(i)
                 }
             }
