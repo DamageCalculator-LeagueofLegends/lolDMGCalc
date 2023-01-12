@@ -35,8 +35,11 @@ class APIClient {
         var request = URLRequest(url: url)
 
         let json = try encoder.encode(payload)
-        request.httpBody = json
 
+        request.httpBody = json
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        print(String(data:request.httpBody!, encoding: .utf8)!)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = method
 
         return try await performRequest(request)
@@ -45,10 +48,7 @@ class APIClient {
     private func performRequest<Res: Codable>(_ request: URLRequest) async throws -> Res {
         let (data, response) = try await urlSession.data(for: request)
         print(data)
-
-//        print(data)
         print(response)
-
         guard let httpResponse = response as? HTTPURLResponse else {
             throw URLError(.badServerResponse)
         }

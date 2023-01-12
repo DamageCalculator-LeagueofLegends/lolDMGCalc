@@ -27,13 +27,13 @@ struct AvailableAbilitiesView: View {
                     Button {
                         var tempAct: Action = action
                         if action.name == "Q" {
-                            tempAct.fullName = vm.selectedChampion?.q_name ?? action.fullName
+                            tempAct.fullName = vm.selectedChampion?.champAbilities?.q.staticData[0].name ?? action.fullName
                         } else if action.name == "W" {
-                            tempAct.fullName = vm.selectedChampion?.w_name ?? action.fullName
+                            tempAct.fullName = vm.selectedChampion?.champAbilities?.w.staticData[0].name ?? action.fullName
                         } else if action.name == "E" {
-                            tempAct.fullName = vm.selectedChampion?.e_name ?? action.fullName
+                            tempAct.fullName = vm.selectedChampion?.champAbilities?.e.staticData[0].name ?? action.fullName
                         } else if action.name == "R" {
-                            tempAct.fullName = vm.selectedChampion?.r_name ?? action.fullName
+                            tempAct.fullName = vm.selectedChampion?.champAbilities?.r.staticData[0].name ?? action.fullName
                         }
                         vm.selectedActions.append(tempAct)
                     } label: {

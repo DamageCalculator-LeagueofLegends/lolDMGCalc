@@ -33,8 +33,8 @@ struct ItemListView: View {
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     HStack {
-                        AsyncImageView(url: item.item_icon, size: 50)
-                        Text(item.item_name)
+                        AsyncImageView(url: item.itemIcon, size: 50)
+                        Text(item.itemName)
                             .foregroundColor(Color("Black"))
                     }
                 }

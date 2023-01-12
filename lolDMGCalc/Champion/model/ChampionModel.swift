@@ -7,111 +7,234 @@
 
 import Foundation
 
-struct ChampionModel: Identifiable, Codable {
+struct ChampionModel: Codable, Identifiable {
     var id: Int {
-        champion_id
+        champID
     }
 
-    var champion_id: Int
-    var champion_name: String
-    var champion_icon: String
+    let tpye: String
+    let mayAttack: Bool
+    let champLevel: Double
+    let champBasedOnLevelStats: ChampBasedOnLevelStats
+    let champBonusStats: ChampBonusStats
+    // let champItems: [ItemModel]
+    let champUtilInfo: ChampUtilInfo
+    let champMissingHealthAmpInfo: ChampMissingHealthAmpInfo
+    let champScalingValues: [String: Double]
+    let champID: Int
+    let champName: String
+    let champIcon: String
+    let attackSpeedRatio: Double
+    let champAbilities: ChampAbilities?
+    let champBounds: ChampBounds
+    let champTotalStats: ChampTotalStats
+    let combatStats: CombatStats
 
-    var champion_resource: String
-    var champion_attack_type: String
-    var champion_adaptive_type: String
-
-    var champion_level: Int
-
-    var base_health: Double
-    var base_health_regen: Double
-    var base_mana: Double
-    var base_mana_regen: Double
-    var base_armor: Double
-    var base_magic_resistance: Double
-    var base_attack_damage: Double
-
-    var base_attack_speed: Double
-    var base_movespeed: Double
-
-    var health_per_level: Double
-    var health_regen_per_level: Double
-    var mana_per_level: Double
-    var mana_regen_per_level: Double
-    var armor_per_level: Double
-    var magic_resistance_per_level: Double
-    var attack_damage_per_level: Double
-    var attack_speed_per_level: Double
-
-    var critical_strike_damage: Double
-    var critical_strike_damage_modifier: Double
-    var attack_speed_ratio: Double
-    var gold_per_10: Double
-
-    var health_points_based_on_level: Double
-    var health_points_regen_based_on_level: Double
-    var mana_based_on_level: Double
-    var mana_regen_based_on_level: Double
-    var armor_based_on_level: Double
-    var magic_resistance_based_on_level: Double
-    var attack_damage_based_on_level: Double
-
-    var bonus_health_points: Double
-    var bonus_mana: Double
-    var bonus_armor: Double
-    var bonus_magic_resistance: Double
-    var bonus_attack_damage: Double
-    var bonus_attack_speed: Double
-
-    var total_health_points: Double
-    var total_health_regen: Double
-    var total_mana: Double
-    var total_mana_regen: Double
-    var total_armor: Double
-    var total_attack_damage: Double
-    var total_attack_speed: Double
-    var total_magic_resistance: Double
-    var total_armor_pen_percentage: Double
-    var total_magic_pen_percentage: Double
-    var total_tenacity: Double
-    var total_slow_resistance: Double
-
-    var total_critical_chance: Double
-    var total_lethality_flat: Double
-    var total_magic_pen_flat: Double
-    var total_ability_power_flat: Double
-    var total_ability_haste: Double
-    var total_heal_and_shield_power: Double
-    var total_life_steal: Double
-    var total_physical_vamp: Double
-    var total_omnivamp: Double
-
-    var has_mythic: Bool
-    var number_of_legendary_items: Int
-    var has_steraks_gage: Bool
-    var has_rabadons_deathcap: Bool
-    var has_titanic_hydra: Bool
-    var has_demonic_embrace: Bool
-
-    var mythic_armor_pen_perc: Double
-    var mythic_magic_pen_perc: Double
-    var mythic_tenacity: Double
-    var mythic_slow_resistance: Double
-    
-    let q_bounds: Bounds
-    let w_bounds: Bounds
-    let e_bounds: Bounds
-    let r_bounds: Bounds
-    
-    var q_name: String
-    var w_name: String
-    var e_name: String
-    var r_name: String
-    
-    var enemy_health: Double
+    enum CodingKeys: String, CodingKey {
+        case tpye, mayAttack, champLevel, champBasedOnLevelStats, champBonusStats, champUtilInfo, champMissingHealthAmpInfo, champScalingValues, champID, champName, champIcon, attackSpeedRatio, champAbilities
+        case champBounds = "_champBounds"
+        case champTotalStats, combatStats
+    }
 }
 
+// MARK: - ChampAbilities
 
-struct Bounds: Codable {
-    let lower: Int
-    let upper: Int
+struct ChampAbilities: Codable {
+    let q, w, e, r: ChampAbilitiesData
+
+    enum CodingKeys: String, CodingKey {
+        case q = "Q"
+        case w = "W"
+        case e = "E"
+        case r = "R"
+    }
+}
+
+// MARK: - ChampAbilities
+
+struct ChampAbilitiesData: Codable {
+    let dynamicData: DynamicData
+    let staticData: [StaticData]
+}
+
+// MARK: - DynamicData
+
+struct DynamicData: Codable {
+    let bounds: BoundsClass
+    let scalingValues: [String: Double]?
+    let actionConditions: ActionConditions?
+    let skillLevel: Int?
+    let attributeIndicies: AbilityAtributeIndicies?
+}
+
+struct ActionConditions: Codable {
+    let conditions: [Condition]?
+}
+
+struct Condition: Codable {
+    let type: String
+    let value: Value?
+}
+
+enum Value: Codable {
+    case bool(Bool)
+    case double(Double)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(Bool.self) {
+            self = .bool(x)
+            return
+        }
+        if let x = try? container.decode(Double.self) {
+            self = .double(x)
+            return
+        }
+        throw DecodingError.typeMismatch(Value.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Value"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .bool(let x):
+            try container.encode(x)
+        case .double(let x):
+            try container.encode(x)
+        }
+    }
+}
+
+struct AbilityAtributeIndicies: Codable {
+    let leveling, ability, effect: Int
+}
+
+// MARK: - BoundsClass
+
+struct BoundsClass: Codable {
+    let lower, upper: Int
+}
+
+// MARK: - StaticDatum
+
+struct StaticData: Codable {
+    let name: String
+    let icon: String
+    let effects: [Effect]?
+    let cost: Cost?
+    let cooldown: Cooldown
+    let targeting, affects: String
+    let spellshieldable: String?
+    let resource: String?
+    let damageType, spellEffects, projectile: String?
+    let onHitEffects, occurrence, missileSpeed, rechargeRate: String?
+    let collisionRadius, tetherRadius, onTargetCDStatic, innerRadius: String?
+    let speed, width: String?
+    let angle: String?
+    let castTime: String
+    let effectRadius, targetRange: String?
+
+    enum CodingKeys: String, CodingKey {
+        case name, icon, effects, cost, cooldown, targeting, affects, spellshieldable, resource, damageType, spellEffects, projectile, onHitEffects, occurrence, missileSpeed, rechargeRate, collisionRadius, tetherRadius
+        case onTargetCDStatic = "onTargetCdStatic"
+        case innerRadius, speed, width, angle, castTime, effectRadius, targetRange
+    }
+}
+
+struct Cost: Codable {
+    let modifiers: [Modifier]
+}
+
+// MARK: - Cooldown
+
+struct Cooldown: Codable {
+    let modifiers: [Modifier]
+    let affectedByCdr: Bool
+}
+
+// MARK: - Modifier
+
+struct Modifier: Codable {
+    let values: [Double]
+    let units: [String]?
+}
+
+enum Unit: String, Codable {
+    case ad = "% AD"
+    case empty = ""
+    case unit = "%"
+}
+
+enum ScalingValuesNames: String, Codable {
+    case ad = "% AD"
+    case ap = "% AP"
+    case bonusAD = "% bonus AD"
+}
+
+// MARK: - Effect
+
+struct Effect: Codable {
+    let leveling: [Leveling]?
+}
+
+// MARK: - Leveling
+
+struct Leveling: Codable {
+    let attribute: String
+    let modifiers: [Modifier]?
+}
+
+// MARK: - ChampBasedOnLevelStats
+
+struct ChampBasedOnLevelStats: Codable {
+    let healthPoints, healthPointsRegen, mana, manaRegen: Double
+    let armor, magicResistance, attackDamage: Double
+}
+
+// MARK: - ChampBonusStats
+
+struct ChampBonusStats: Codable {
+    let healthPoints, mana, armor, magicResistance: Double
+    let attackDamage, attackSpeed: Double
+}
+
+// MARK: - ChampBounds
+
+struct ChampBounds: Codable {
+    let q, w, e, r: BoundsClass
+
+    enum CodingKeys: String, CodingKey {
+        case q = "Q"
+        case w = "W"
+        case e = "E"
+        case r = "R"
+    }
+}
+
+// MARK: - ChampMissingHealthAmpInfo
+
+struct ChampMissingHealthAmpInfo: Codable {
+    let damageAmplifier, perPercentage, cappedAt: Double
+}
+
+// MARK: - ChampUtilInfo
+
+struct ChampUtilInfo: Codable {
+    let hasMythic: Bool
+    let enemyMaxHealth, enemyCurrentHealth, baseHealthRegen, baseManaRegen: Double
+}
+
+// MARK: - CombatStats
+
+struct CombatStats: Codable {
+    let armor, magicResistance, totalHealth, currentHealth: Double
+}
+
+// MARK: - ChampTotalStats
+
+struct ChampTotalStats: Codable {
+    let healthPoints, mana, manaRegen, armor, magicResistance: Double
+    let attackDamage, attackSpeed, criticalChance, lethalityFlat: Double
+    let magicPenFlat, abilityPower, abilityHaste, healAndShieldPower: Double
+    let lifeSteal, omnivamp, physicalVamp, healthRegen, armorPenPercentage: Double
+    let magicPenPercentage, tenacity, slowResistance: Double
 }

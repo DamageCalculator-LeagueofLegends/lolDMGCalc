@@ -17,7 +17,7 @@ protocol ItemServiceProtocol {
 
 class ItemService: ItemServiceProtocol {
     private let client: APIClient = .init()
-    let url = "http://127.0.0.1:5000/getInitData/items"
+    let url = "http://127.0.0.1:3000/getInitData/items"
 
     func getItems() async throws -> [ItemModel] {
         let data: ItemListModel = try await client.get(url)

@@ -25,7 +25,7 @@ struct ChooseItemButtonsView: View {
                         ItemListView(vm: vm, numberOfButton: i)
                     } label: {
                         if let item = vm.selectedItemList[i] {
-                            AsyncImageView(url: item.item_icon, size: 40)
+                            AsyncImageView(url: item.itemIcon, size: 40)
                         } else {
                             EmptyImageView(size: 40)
                         }

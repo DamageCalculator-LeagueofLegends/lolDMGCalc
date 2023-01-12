@@ -17,7 +17,7 @@ protocol ChampionServiceProtocol {
 
 class ChampionService: ChampionServiceProtocol {
     private let client: APIClient = .init()
-    let url = "http://127.0.0.1:5000/getInitData/champs"
+    let url = "http://127.0.0.1:3000/getInitData/champs"
 
     func getChampions() async throws -> [ChampionModel] {
         let data: ChampionListModel = try await client.get(url)

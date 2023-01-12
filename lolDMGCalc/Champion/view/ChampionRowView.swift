@@ -33,8 +33,8 @@ struct ChampionRowView: View {
             presentationMode.wrappedValue.dismiss()
         } label: {
             HStack {
-                AsyncImageView(url: champ.champion_icon, size: 40)
-                Text("\(champ.champion_name)")
+                AsyncImageView(url: champ.champIcon, size: 40)
+                Text("\(champ.champName)")
                     .foregroundColor(Color("Black"))
                 Spacer()
             }

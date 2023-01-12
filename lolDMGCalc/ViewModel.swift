@@ -45,7 +45,7 @@ class ViewModel: ObservableObject {
         var tempArray: [Action] = []
         for itemIndex in selectedItemList.indices {
             let item = selectedItemList[itemIndex]
-            if item?.has_active ?? false {
+            if item?.hasActive ?? false {
                 tempArray.append(ActionData.items[itemIndex])
             }
         }
@@ -95,19 +95,38 @@ class ViewModel: ObservableObject {
 
     public func sendData() {
 //        var json_encoder = JSONEncoder()
-        let dataSet = BackendData(
-            championID: selectedChampion?.champion_id ?? 0,
-            listOfItemIDs: selectedItemList.map { $0?.item_id ?? 0 },
-            listOfActionNames: selectedActions.map { $0.name },
-            championLevel: Int(championLevel),
-            abilityLevel: abilityLevel.levels.map { $0.value },
-            dummyStats: [dummy.health, dummy.armor, dummy.magicResistance]
+        let dataSet = FrontendData(
+            participants: [
+                Participant(
+                    type:selectedChampion?.tpye ?? "",
+                    championID: selectedChampion?.champID,
+                    championLevel: Int(championLevel),
+                    listOfItemIDs: selectedItemList.map { $0?.itemID ?? 0},
+                    listOfActions: Mock.actionConditionsList,
+                    abilityLevel: Ability(
+                        q: abilityLevel.levels[0].value,
+                        w: abilityLevel.levels[1].value,
+                        e: abilityLevel.levels[2].value,
+                        r: abilityLevel.levels[3].value
+                    )
+                ),
+                Participant(
+                    type: "DUMMY",
+                    health: dummy.health,
+                    armor: dummy.armor,
+                    magicResistance: dummy.magicResistance
+                )
+            ]
         )
         Task{
             do {
-                guard let url = URL(string: "http://127.0.0.1:5000/sendData") else {throw URLError(.badURL)}
-                let data: BackendData = try await apiClient.post(url, payload: dataSet)
+                guard let url = URL(string: "http://127.0.0.1:3000/sendData") else {throw URLError(.badURL)}
+                let data: OverallDamageData = try await apiClient.post(url, payload: dataSet)
                 print(data)
+                output.totalDamage = data.totalDamge
+                output.trueDamage = data.trueDamage
+                output.physicalDamage = data.physicalDamage
+                output.magicDamage = data.magicDamage
             } catch {
                 print(error)
             }
@@ -130,4 +149,72 @@ struct BackendData: Codable {
     var championLevel: Int
     var abilityLevel: [Int]
     var dummyStats: [Int]
+
+    
+}
+
+
+// MARK: - FrontendData
+struct FrontendData: Codable {
+    let participants: [Participant]
+
+
+}
+
+// MARK: - Participant
+struct Participant: Codable {
+    let type: String
+    var championID, championLevel: Int?
+    var listOfItemIDs: [Int]?
+    var listOfActions: [ActionAndCondition]?
+    var abilityLevel: Ability?
+    var health, armor, magicResistance: Int?
+
+    init(type: String, championID: Int?, championLevel: Int?, listOfItemIDs: [Int]?, listOfActions: [ActionAndCondition]?, abilityLevel: Ability?) {
+        self.type = type
+        self.championID = championID
+        self.championLevel = championLevel
+        self.listOfItemIDs = listOfItemIDs
+        self.listOfActions = listOfActions
+        self.abilityLevel = abilityLevel
+    }
+
+    init( type: String, health: Int?, armor: Int?, magicResistance: Int?) {
+        self.type = type
+        self.health = health
+        self.armor = armor
+        self.magicResistance = magicResistance
+    }
+}
+
+// MARK: - AbilityLevel
+struct Ability: Codable {
+    let q, w, e, r: Int
+
+    enum CodingKeys: String, CodingKey {
+        case q = "Q"
+        case w = "W"
+        case e = "E"
+        case r = "R"
+    }
+}
+
+// MARK: - ListOfAction
+struct ActionAndCondition: Codable {
+    let ability: String
+    let conditions: ActionConditions?
+}
+
+struct OverallDamageData: Codable {
+    let totalDamge: Double;
+    let trueDamage: Double;
+    let physicalDamage: Double;
+    let magicDamage: Double;
+    let abilityDamage: [AbilityDamage]
+}
+
+
+struct AbilityDamage: Codable {
+    let type: String
+    let value: Double
 }

@@ -18,6 +18,7 @@
 		49476BE02911CA1D00457FEE /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49476BDF2911CA1D00457FEE /* Mock.swift */; };
 		49476BE22911CBAC00457FEE /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49476BE12911CBAC00457FEE /* ItemModel.swift */; };
 		49476BE429127B5600457FEE /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49476BE329127B5600457FEE /* Help.swift */; };
+		4953D88F29707CF700C19948 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4953D88E29707CF700C19948 /* README.md */; };
 		49550DA92922DBE500F13E9F /* ChampionConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49550DA82922DBE500F13E9F /* ChampionConfigView.swift */; };
 		49550DAB2922DE5D00F13E9F /* ChampionLevelSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49550DAA2922DE5D00F13E9F /* ChampionLevelSliderView.swift */; };
 		49550DAD2922DF1D00F13E9F /* AbilityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49550DAC2922DF1D00F13E9F /* AbilityLevelView.swift */; };
@@ -57,6 +58,7 @@
 		49476BDF2911CA1D00457FEE /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		49476BE12911CBAC00457FEE /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		49476BE329127B5600457FEE /* Help.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		4953D88E29707CF700C19948 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49550DA82922DBE500F13E9F /* ChampionConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionConfigView.swift; sourceTree = "<group>"; };
 		49550DAA2922DE5D00F13E9F /* ChampionLevelSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionLevelSliderView.swift; sourceTree = "<group>"; };
 		49550DAC2922DF1D00F13E9F /* AbilityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityLevelView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		490DB5CB28FD53DA004A429F = {
 			isa = PBXGroup;
 			children = (
+				4953D88E29707CF700C19948 /* README.md */,
 				490DB5D628FD53DA004A429F /* lolDMGCalc */,
 				490DB5D528FD53DA004A429F /* Products */,
 			);
@@ -123,7 +126,7 @@
 				4975028F29252C81004E6454 /* Configurations */,
 				49BEF64A2926333500EEE545 /* DummyStats */,
 				498BFEF72926435E00494C10 /* AbilityUsage */,
-				498BFF072926723900494C10 /* StatsPage (LATER LOL) */,
+				498BFF072926723900494C10 /* StatsPage (LATER) */,
 				495E54802922D68800C36022 /* Utilities */,
 				490DB5DB28FD53DA004A429F /* Assets.xcassets */,
 				490DB5DD28FD53DA004A429F /* Preview Content */,
@@ -296,13 +299,13 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		498BFF072926723900494C10 /* StatsPage (LATER LOL) */ = {
+		498BFF072926723900494C10 /* StatsPage (LATER) */ = {
 			isa = PBXGroup;
 			children = (
 				498BFF092926724B00494C10 /* view */,
 				498BFF082926724400494C10 /* model */,
 			);
-			path = "StatsPage (LATER LOL)";
+			path = "StatsPage (LATER)";
 			sourceTree = "<group>";
 		};
 		498BFF082926724400494C10 /* model */ = {
@@ -402,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4953D88F29707CF700C19948 /* README.md in Resources */,
 				490DB5DF28FD53DA004A429F /* Preview Assets.xcassets in Resources */,
 				490DB5DC28FD53DA004A429F /* Assets.xcassets in Resources */,
 			);

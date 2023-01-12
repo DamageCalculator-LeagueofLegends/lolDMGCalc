@@ -13,7 +13,7 @@ struct ChampionStatsOverview: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Attack Damage: " + String(format: "%.0f", champ.base_attack_damage))
+            Text("Attack Damage: " + String(format: "%.0f", champ.champBasedOnLevelStats.attackDamage))
         }
     }
 }

@@ -18,13 +18,13 @@ struct ChampionConfigView: View {
             if let champion = vm.selectedChampion {
                 
                 Divider()
-                AbilityLevelView(vm: vm, description: "Q", lower: champion.q_bounds.lower, upper: champion.q_bounds.upper)
+                AbilityLevelView(vm: vm, description: "Q", lower: Int(champion.champBounds.q.lower), upper: Int(champion.champBounds.q.upper))
                 Divider()
-                AbilityLevelView(vm: vm, description: "W", lower: champion.w_bounds.lower, upper: champion.w_bounds.upper)
+                AbilityLevelView(vm: vm, description: "W", lower: Int(champion.champBounds.w.lower), upper: Int(champion.champBounds.w.upper))
                 Divider()
-                AbilityLevelView(vm: vm, description: "E", lower: champion.e_bounds.lower, upper: champion.e_bounds.upper)
+                AbilityLevelView(vm: vm, description: "E", lower: Int(champion.champBounds.e.lower), upper: Int(champion.champBounds.e.upper))
                 Divider()
-                AbilityLevelView(vm: vm, description: "R", lower: champion.r_bounds.lower, upper: champion.r_bounds.upper)
+                AbilityLevelView(vm: vm, description: "R", lower: Int(champion.champBounds.r.lower), upper: Int(champion.champBounds.r.upper))
             }
 
             Spacer()

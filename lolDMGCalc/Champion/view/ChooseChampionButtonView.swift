@@ -18,7 +18,7 @@ struct ChooseChampionButtonView: View {
                 Text("Champion:")
                     .foregroundColor(Color("Black"))
                 if let champion = vm.selectedChampion {
-                    AsyncImageView(url: champion.champion_icon, size: 90)
+                    AsyncImageView(url: champion.champIcon, size: 90)
                 } else {
                     EmptyImageView(size: 90)
                 }
